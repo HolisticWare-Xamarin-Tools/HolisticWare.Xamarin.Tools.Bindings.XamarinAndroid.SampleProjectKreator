@@ -1,0 +1,2 @@
+# HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator
+HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator
