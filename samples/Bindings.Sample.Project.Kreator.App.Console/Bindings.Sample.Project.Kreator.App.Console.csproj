@@ -8,4 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\source\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Mono.Options.Core" Version="1.0.0" />
+  </ItemGroup>
 </Project>
