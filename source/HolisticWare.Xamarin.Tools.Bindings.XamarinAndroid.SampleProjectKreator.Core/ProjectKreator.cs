@@ -72,6 +72,9 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
                     Console.ReadLine();
                 }
 
+
+                //MsBuildProject 
+
                 return;
             }
         }
