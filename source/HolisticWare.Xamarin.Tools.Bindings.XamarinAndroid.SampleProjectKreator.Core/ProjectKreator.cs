@@ -6,11 +6,38 @@ using Microsoft.Build.Execution;
 
 namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core
 {
-    public class ProjectKreator
+    public partial class ProjectKreator
     {
-
         public ProjectKreator()
         {
+            OptionSet = this.Options();
+
+            return;
+        }
+
+        public Mono.Options.OptionSet OptionSet
+        {
+            get;
+            set;
+        }
+
+        public string InputFolderPath
+        {
+            get;
+            set;
+        }
+
+        public string OutputFolderPath
+        {
+            get;
+            set;
+        }
+
+
+        public string ProjectName
+        {
+            get;
+            set;
         }
 
         public void Load(string path_project)
