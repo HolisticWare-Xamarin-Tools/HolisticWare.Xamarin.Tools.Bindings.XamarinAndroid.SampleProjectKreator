@@ -36,7 +36,7 @@ namespace Bindings.Sample.Project.Kreator.App
 
             if (show_help)
             {
-                ShowHelp(project_kreator.OptionSet);
+                project_kreator.ShowHelp(project_kreator.OptionSet);
                 return;
             }
 
@@ -44,11 +44,11 @@ namespace Bindings.Sample.Project.Kreator.App
             if (extra.Count > 0)
             {
                 message = string.Join(" ", extra.ToArray());
-                Debug($"Using new message: {message}");
+                project_kreator.Debug($"Using new message: {message}");
             }
             else
             {
-                Debug($"Using default message: {message}");
+                project_kreator.Debug($"Using default message: {message}");
             }
             project_kreator.Load(path);
 
