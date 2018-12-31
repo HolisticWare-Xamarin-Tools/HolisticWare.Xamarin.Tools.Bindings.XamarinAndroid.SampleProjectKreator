@@ -9,14 +9,17 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
 
     public partial class ProjectKreator
     {
-        /// 
-        /// 
-        /// 
         /// https://tirania.org/blog/archive/2008/Oct-14.html
         /// http://geekswithblogs.net/robz/archive/2009/11/22/command-line-parsing-with-mono.options.aspx
         /// https://github.com/mono/mono/blob/master/mcs/class/Mono.Options/Mono.Options/Options.cs
-        /// https://github.com/mono/mono/blob/master/mcs/class/Mono.Options/Mono.Options/Options.cs
+        /// http://www.jprl.com/Blog/archive/development/mono/2008/Jan-07.html
+        /// https://csharp.hotexamples.com/examples/-/Mono.Options.OptionSet/Add/php-mono.options.optionset-add-method-examples.html
+        /// https://stackoverflow.com/questions/4625714/ndesk-options-mono-options-parameter-with-multiple-key-value-pairs
+        /// https://stackoverflow.com/questions/35934692/building-mono-options-under-net-core-cli-dotnet-build/// 
+        /// https://dgondotnet.blogspot.com/2013/08/my-last-console-application-monooptions.html
+        /// https://trello.com/c/BSheIxwU/4-add-support-for-nested-optionsets
         /// 
+
 
         string folder_input_android = null;
         string folder_input_dotnet = null;
@@ -64,7 +67,7 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
                 },
             };
 
-            return OptionSet;
+            return OptionSet = options;
         }
 
         public void Debug(string format, params object[] args)
