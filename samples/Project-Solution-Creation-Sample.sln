@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindings.Sample.Project.Kre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core", "..\source\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core.csproj", "{5E799AD4-069E-46F5-B59C-963591F0BC97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.XamarinAndroid", "App.XamarinAndroid\App.XamarinAndroid.csproj", "{B5A98FAB-8B58-48E0-AABB-3D7869225712}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindings.Sample.Project.Kreator.App.Console.Mono", "Bindings.Sample.Project.Kreator.App.Console.Mono\Bindings.Sample.Project.Kreator.App.Console.Mono.csproj", "{812D5A6F-558C-445A-8E43-37C047A86979}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.App.XamarinAndroid", "Sample.App.XamarinAndroid\Sample.App.XamarinAndroid.csproj", "{806CE93F-8EBC-489B-BB0B-F734E063FA4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,14 +27,14 @@ Global
 		{5E799AD4-069E-46F5-B59C-963591F0BC97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E799AD4-069E-46F5-B59C-963591F0BC97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E799AD4-069E-46F5-B59C-963591F0BC97}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B5A98FAB-8B58-48E0-AABB-3D7869225712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B5A98FAB-8B58-48E0-AABB-3D7869225712}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B5A98FAB-8B58-48E0-AABB-3D7869225712}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B5A98FAB-8B58-48E0-AABB-3D7869225712}.Release|Any CPU.Build.0 = Release|Any CPU
 		{812D5A6F-558C-445A-8E43-37C047A86979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{812D5A6F-558C-445A-8E43-37C047A86979}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{812D5A6F-558C-445A-8E43-37C047A86979}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{812D5A6F-558C-445A-8E43-37C047A86979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{806CE93F-8EBC-489B-BB0B-F734E063FA4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{806CE93F-8EBC-489B-BB0B-F734E063FA4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{806CE93F-8EBC-489B-BB0B-F734E063FA4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{806CE93F-8EBC-489B-BB0B-F734E063FA4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5E799AD4-069E-46F5-B59C-963591F0BC97} = {F4ABE4B1-48AF-4A7B-B150-EE471159B2B1}

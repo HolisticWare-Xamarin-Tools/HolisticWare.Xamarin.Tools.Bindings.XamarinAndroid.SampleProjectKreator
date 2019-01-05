@@ -2,9 +2,9 @@
 using Android.Widget;
 using Android.OS;
 
-namespace App.XamarinAndroid
+namespace Sample.App.XamarinAndroid
 {
-    [Activity(Label = "App.XamarinAndroid", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Activity(Label = "Sample.App.XamarinAndroid", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
         int count = 1;
