@@ -5,9 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Class1.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.Build.Framework" Version="15.9.20" />
     <PackageReference Include="Microsoft.Build.Engine" Version="15.9.20" />
     <PackageReference Include="Microsoft.Build" Version="15.9.20" />
@@ -15,5 +12,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Files\" />
+    <Folder Include="Files\Sample.App.XamarinAndroid\" />
+    <Folder Include="Files\Sample.App.XamarinAndroid\Resources\" />
+    <Folder Include="Files\Sample.App.XamarinAndroid\Assets\" />
+    <Folder Include="Files\Sample.App.XamarinAndroid\Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Files\Sample.App.XamarinAndroid\**">
+    </Content>
+    <Content Include="Files\Sample.App.XamarinAndroid\**" CopyToOutputDirectory="PreserveNewest">
+    </Content>
   </ItemGroup>
 </Project>
