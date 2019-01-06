@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core;
+using global::HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core;
 
 namespace Bindings.Sample.Project.Kreator.App.Console.Mono
 {
@@ -19,7 +19,15 @@ namespace Bindings.Sample.Project.Kreator.App.Console.Mono
 
         static void Main(string[] args)
         {
-            project_kreator = new ProjectKreator();
+            project_kreator = new ProjectKreator()
+            {
+                ProjectName = "HeroBarry",
+                InputFolderPath = "../../../../HW/Xamarin.Android.Samples/externals/CoordinatorLayout-HeroBarry/",
+                OutputFolderPath = "../../../../HW/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+            };
+
+            project_kreator.CreateProject();
+
 
             List<string> extra;
             try
