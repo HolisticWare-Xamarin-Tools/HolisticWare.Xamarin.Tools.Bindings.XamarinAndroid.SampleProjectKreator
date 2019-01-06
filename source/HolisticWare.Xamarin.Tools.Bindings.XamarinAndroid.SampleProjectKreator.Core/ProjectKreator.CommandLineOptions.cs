@@ -24,6 +24,7 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
         string folder_input_android = null;
         string folder_input_dotnet = null;
         bool show_help = false;
+
         int verbosity = 0;
 
         public Mono.Options.OptionSet Options()
@@ -91,5 +92,6 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
 
             return;
         }
+
     }
 }
