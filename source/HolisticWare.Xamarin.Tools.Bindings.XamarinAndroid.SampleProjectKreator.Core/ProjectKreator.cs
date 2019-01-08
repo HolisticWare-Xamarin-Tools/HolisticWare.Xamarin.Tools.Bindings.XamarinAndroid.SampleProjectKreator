@@ -42,7 +42,7 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
 
         public void Load(string path_project)
         {
-            BuildResult result = null;
+            //BuildResult result = null;
 
             using (ProjectCollection collection = new ProjectCollection())
             {
