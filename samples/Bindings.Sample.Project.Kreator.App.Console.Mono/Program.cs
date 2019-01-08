@@ -7,7 +7,6 @@ namespace Bindings.Sample.Project.Kreator.App.Console.Mono
     class MainClass
     {
         static bool show_help = false;
-        static int verbosity = 0;
 
         static string path =
             // "/Projects/hw-tools/Kreator/source/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core.csproj"
@@ -22,8 +21,8 @@ namespace Bindings.Sample.Project.Kreator.App.Console.Mono
             project_kreator = new ProjectKreator()
             {
                 ProjectName = "HeroBarry",
-                InputFolderPath = "../../../../HW/Xamarin.Android.Samples/externals/CoordinatorLayout-HeroBarry/",
-                OutputFolderPath = "../../../../HW/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+                InputFolderPath = "../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-HeroBarry/",
+                OutputFolderPath = "../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
             };
 
             project_kreator.CreateProject();
