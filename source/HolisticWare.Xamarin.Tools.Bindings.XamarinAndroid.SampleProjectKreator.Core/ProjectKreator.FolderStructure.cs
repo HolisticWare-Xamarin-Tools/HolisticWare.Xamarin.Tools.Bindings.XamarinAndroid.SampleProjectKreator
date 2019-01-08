@@ -6,7 +6,7 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
 {
     public partial class ProjectKreator
     {
-        string current_directory = null;
+        string working_directory = null;
         string runtime_framework = System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription;
 
         Dictionary<string, string> ProjectStructureFolders
@@ -17,23 +17,26 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
 
         public void CreateProject()
         {
-            current_directory = Environment.CurrentDirectory;
+            working_directory = Environment.CurrentDirectory;
 
             string output_folder = null;
-            if 
+            string input_folder = null;
+            if
                (
-                    current_directory.Contains(@"Debug")
+                    working_directory.Contains(@"Debug")
                     ||
-                    current_directory.Contains(@"Release")
+                    working_directory.Contains(@"Release")
                )
             {
                 // IDE Debugging under netfx
                 output_folder = Path.Combine(@"..", "..", this.OutputFolderPath);
+                input_folder = Path.Combine(@"..", "..", this.InputFolderPath);
             }
             else if (runtime_framework.Contains(".NET Core"))
             {
 
             }
+
 
             ProjectStructureFolders.Add
                                 (
@@ -105,6 +108,13 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
                     Directory.CreateDirectory(folder); 
                 }
             }
+
+            string content_directory = Path.Combine(working_directory, "Files");
+            string[] folders_output = Directory.GetDirectories(content_directory, "*", SearchOption.AllDirectories);
+            string[] files_output = Directory.GetFiles(content_directory, "*", SearchOption.AllDirectories);
+
+            string[] folders_input = Directory.GetDirectories(input_folder, "*", SearchOption.AllDirectories);
+            string[] fils_input = Directory.GetFiles(input_folder, "*", SearchOption.AllDirectories);
 
             return;
         }
