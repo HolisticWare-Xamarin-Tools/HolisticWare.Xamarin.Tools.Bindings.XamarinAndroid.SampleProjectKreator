@@ -113,10 +113,26 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
             string[] folders_output = Directory.GetDirectories(content_directory, "*", SearchOption.AllDirectories);
             string[] files_output = Directory.GetFiles(content_directory, "*", SearchOption.AllDirectories);
 
-            string[] folders_input = Directory.GetDirectories(input_folder, "*", SearchOption.AllDirectories);
-            string[] fils_input = Directory.GetFiles(input_folder, "*", SearchOption.AllDirectories);
+            string[] fils_input_java = GetInputFilesJavaCode(input_folder);
+            string[] fils_input_resources = GetInputFilesResources(input_folder);
 
             return;
+        }
+
+        public string[] GetInputFilesJavaCode(string input_folder)
+        {
+            string[] folders_input = Directory.GetDirectories(input_folder, "*", SearchOption.AllDirectories);
+            string[] fils_input = Directory.GetFiles(input_folder, "*.java", SearchOption.AllDirectories);
+
+            return fils_input;
+        }
+
+        public string[] GetInputFilesResources(string input_folder)
+        {
+            string[] folders_input = Directory.GetDirectories(input_folder, "*", SearchOption.AllDirectories);
+            string[] fils_input = Directory.GetFiles(input_folder, "*.xml", SearchOption.AllDirectories);
+
+            return fils_input;
         }
     }
 }
