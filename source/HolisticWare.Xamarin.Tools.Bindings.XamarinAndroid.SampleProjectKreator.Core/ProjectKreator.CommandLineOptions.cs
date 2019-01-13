@@ -22,7 +22,7 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
 
 
         string folder_input_android = null;
-        string folder_input_dotnet = null;
+        string folder_output_dotnet = null;
         bool show_help = false;
 
         int verbosity = 0;
@@ -57,7 +57,7 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
                     "output folder with Xamarin.Android Sample App project",
                     (string v) =>
                     {
-                        folder_input_dotnet = v;
+                        folder_output_dotnet = v;
                         return;
                     }
                 },
