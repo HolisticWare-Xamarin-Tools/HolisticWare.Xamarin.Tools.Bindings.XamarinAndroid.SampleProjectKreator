@@ -57,7 +57,8 @@ namespace Bindings.Sample.Project.Kreator.App.Console.Mono
             {
                 project_kreator.Debug($"Using default message: {message}");
             }
-            project_kreator.Load(path);
+
+            //project_kreator.Load(path);
 
             return;
         }
