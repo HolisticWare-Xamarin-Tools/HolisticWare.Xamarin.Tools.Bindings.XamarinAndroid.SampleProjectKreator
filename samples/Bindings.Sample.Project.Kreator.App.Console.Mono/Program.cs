@@ -14,19 +14,88 @@ namespace Bindings.Sample.Project.Kreator.App.Console.Mono
             "/Projects/hw-tools/SampleProjectKreator/samples/App.XamarinAndroid/App.XamarinAndroid.csproj"
             ;
 
+        static List<(
+                        string GroupName,
+                        string FeatureName,
+                        string ProjectName,
+                        string InputFolderPath,
+                        string OutputFolderPath
+                    )> ProjectsDataToConvert;
+        static List<ProjectKreator> ProjectKreators;
+
         static ProjectKreator project_kreator = null;
 
         static void Main(string[] args)
         {
-            project_kreator = new ProjectKreator()
+            //Test_Microsoft_Build_Evaluation();
+
+            ProjectsDataToConvert = new List<(
+                                                string GroupName,
+                                                string FeatureName,
+                                                string ProjectName,
+                                                string InputFolderPath,
+                                                string OutputFolderPath
+                                            )>
             {
-                ProjectName = "HeroBarry",
-                InputFolderPath = "../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-HeroBarry/",
-                OutputFolderPath = "../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+                (
+                    GroupName : "Android.Support",
+                    FeatureName : "CoordinatorLayout",
+                    ProjectName : "HeroBarry",
+                    InputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-HeroBarry/",
+                    OutputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+                ),
+                (
+                    GroupName : "Android.Support",
+                    FeatureName : "CoordinatorLayout",
+                    ProjectName : "vitovalov",
+                    InputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-vitovalov/",
+                    OutputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+                ),
+                (
+                    GroupName : "Android.Support",
+                    FeatureName : "CoordinatorLayout",
+                    ProjectName : "cstew",
+                    InputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-cstew/",
+                    OutputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+                ),
+                (
+                    GroupName : "Android.Support",
+                    FeatureName : "CoordinatorLayout",
+                    ProjectName : "romainz",
+                    InputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-romainz/",
+                    OutputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+                ),
+                (
+                    GroupName : "Android.Support",
+                    FeatureName : "CoordinatorLayout",
+                    ProjectName : "ttymsd",
+                    InputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-ttymsd/",
+                    OutputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+                ),
             };
 
-            project_kreator.CreateProject();
+            foreach
+                (
+                    (
+                        string GroupName,
+                        string FeatureName,
+                        string ProjectName,
+                        string InputFolderPath,
+                        string OutputFolderPath
+                    ) p in ProjectsDataToConvert
+                )
+            {
+                project_kreator = new ProjectKreator()
+                {
+                    GroupName = p.GroupName,
+                    FeatureName = p.FeatureName,
+                    ProjectName = p.ProjectName,
+                    InputFolderPath = p.InputFolderPath,
+                    OutputFolderPath = p.OutputFolderPath
+                };
 
+                project_kreator.CreateProject();
+            }
 
             List<string> extra;
             try
@@ -61,6 +130,17 @@ namespace Bindings.Sample.Project.Kreator.App.Console.Mono
             //project_kreator.Load(path);
 
             return;
+        }
+
+        private static void Test_Microsoft_Build_Evaluation()
+        {
+            var p = new Microsoft.Build.Evaluation.Project
+            (
+                //"/Projects/hw-tools/SampleProjectKreator/samples/App.XamarinAndroid/App.XamarinAndroid.csproj"
+                "/Projects/hw-tools/SampleProjectKreator/samples/Bindings.Sample.Project.Kreator.App.Console.Mono/Bindings.Sample.Project.Kreator.App.Console.Mono.csproj"
+            );
+            p.AddItem("Compile", @"C:\folder\file.cs");
+            p.Save();
         }
     }
 }
