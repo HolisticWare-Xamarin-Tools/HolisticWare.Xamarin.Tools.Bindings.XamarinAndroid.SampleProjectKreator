@@ -330,6 +330,49 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
                                                         );
             File.WriteAllText(path_output_android_manifest, content_android_manifest);
 
+
+            string path_content_assembly_info = Path.Combine
+                                                       (
+                                                           new string[]
+                                                           {
+                                                                "Files",
+                                                                "Sample.App.XamarinAndroid",
+                                                                "Properties",
+                                                                "AssemblyInfo.cs",
+                                                           }
+                                                       );
+
+            string content_assembly_info = File.ReadAllText(path_content_assembly_info);
+
+            content_assembly_info = content_assembly_info.Replace("Sample.App.XamarinAndroid", this.ProjectName);
+
+            string path_output_assembly_info = Path.Combine
+                                                        (
+                                                            new string[]
+                                                            {
+                                                                path_folder_project_properties01,
+                                                                "AssemblyInfo.cs",
+                                                            }
+                                                        );
+            File.WriteAllText(path_output_assembly_info, content_assembly_info);
+
+
+            string node_to_find =
+                @"/msbld:Project/msbld:ItemGroup/msbld:None[@Include='Properties\AndroidManifest.xml']"
+                ;
+            System.Xml.XmlNode node_new = xmldoc.CreateNode
+                                                    (
+                                                        System.Xml.XmlNodeType.Element, 
+                                                        "None",
+                                                        "http://schemas.microsoft.com/developer/msbuild/2003"
+                                                    );
+            System.Xml.XmlAttribute attribute_none = xmldoc.CreateAttribute("Include");
+            attribute_none.Value = @"Properties\AndroidManifest.xml.txt";
+            node_new.Attributes.Append(attribute_none);
+
+            System.Xml.XmlNode node = xmldoc.SelectSingleNode(node_to_find, ns);
+            node?.ParentNode.AppendChild(node_new);
+
             return;
         }
 
@@ -361,7 +404,14 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
                 ;
 
             nodes_android_resources_xml_snippet = nodes_android_resources_xml_snippet.Replace(old, @new);
-            
+
+            string node_to_remove =
+                @"/msbld:Project/msbld:ItemGroup/msbld:AndroidResource[@Include='Resources\layout\Main.axml']"
+                //@"/Project/ItemGroup/AndroidResource[@Include='Resources\\layout\\Main.axml']"
+                ;
+            System.Xml.XmlNode node = xmldoc.SelectSingleNode(node_to_remove, ns);
+            node?.ParentNode.RemoveChild(node);
+
             return;
         }
 
