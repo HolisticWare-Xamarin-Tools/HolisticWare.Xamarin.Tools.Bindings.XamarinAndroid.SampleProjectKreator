@@ -19,6 +19,7 @@
     <Folder Include="Files\Sample.App.XamarinAndroid\Resources\" />
     <Folder Include="Files\Sample.App.XamarinAndroid\Assets\" />
     <Folder Include="Files\Sample.App.XamarinAndroid\Properties\" />
+    <Folder Include="Files\Porting\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Files\Sample.App.XamarinAndroid\**" CopyToOutputDirectory="PreserveNewest">
@@ -28,5 +29,8 @@
     <Compile Include="ProjectKreator.CommandLineOptions.cs" />
     <Compile Include="ProjectKreator.cs" />
     <Compile Include="ProjectKreator.FolderStructure.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Files\Porting\porting-mapping.csv" />
   </ItemGroup>
 </Project>

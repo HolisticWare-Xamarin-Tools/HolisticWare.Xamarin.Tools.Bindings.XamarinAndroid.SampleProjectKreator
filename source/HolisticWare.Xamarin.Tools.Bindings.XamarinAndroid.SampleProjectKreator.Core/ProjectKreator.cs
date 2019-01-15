@@ -34,6 +34,18 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
         }
 
 
+        public string GroupName
+        {
+            get;
+            set;
+        }
+
+        public string FeatureName
+        {
+            get;
+            set;
+        }
+
         public string ProjectName
         {
             get;

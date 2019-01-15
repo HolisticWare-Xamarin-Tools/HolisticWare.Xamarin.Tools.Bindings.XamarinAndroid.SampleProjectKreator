@@ -1,0 +1,14 @@
+﻿StartsWith, ,package,                          ,EndsWith,             ,;,Replace,        ,namespace,         ,{ 
+          , ,extends,                          ,        ,             ,;,Replace,        ,:,                 ,
+          , ,@Override,                        ,        ,             ,;,Replace,        ,/*@Override*/,     ,
+          , ,super,                            ,        ,             ,;,Replace,        ,/*super*/base ,    ,
+
+          , ,R.layout,                         ,        ,             ,;,Replace,        ,Resource.Layout.,  ,
+          , ,R.menu,                         ,        ,             ,;,Replace,        ,Resource.Menu.                     ,     ,
+          , ,R.color,                         ,        ,             ,;,Replace,        ,Resource.Color.                   ,     ,
+          , ,R.style,                         ,        ,             ,;,Replace,        ,Resource.Style.                   ,     ,
+
+StartsWith, ,import android.os.,               ,EndsWith,             ,;,Replace,         ,using Android.OS.               ,     ,
+StartsWith, ,import android.support.v4.app.,   ,EndsWith,             ,;,Replace,        ,using Android.Support.V4.App.    ,     ,
+StartsWith, ,import android.view.,             ,EndsWith,             ,;,Replace,        ,using Android.Views.             ,     ,
+

@@ -133,6 +133,7 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
             string[] files_input = Directory.GetFiles(input_folder, "*.xml", SearchOption.AllDirectories);
 
             string path_folder_project = ProjectStructureFolders["Project Folder"];
+
             ProcessProject(path_folder_project);
 
             foreach (string fi in files_input)
@@ -185,8 +186,50 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
 
             }
 
+            xmldoc.DocumentElement.InnerXml +=
+                nodes_compile_java_xml_snippet
+                + Environment.NewLine +
+                nodes_android_resources_xml_snippet
+                + Environment.NewLine +
+                "<!-- mc++ moljac -->"
+                + Environment.NewLine
+                ;
+
+            xmldoc.Save(path_output_project_csproj);
+
             return files_input;
         }
+
+
+        System.Xml.XmlDocument xmldoc = null;
+        System.Xml.XmlNamespaceManager ns = null;
+        System.Xml.XmlNode node_namespace = null;
+        System.Xml.XmlNode node_assembly = null;
+        System.Xml.XmlNode node_project_guid = null;
+
+        System.Xml.XmlNodeList nodes_compile = null;
+
+        string nodes_compile_java_xml_snippet =
+           $"<ItemGroup xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">"
+                + Environment.NewLine +
+            $@"     <!-- <Compile Include=""test.cs"" /> -->"
+                + Environment.NewLine +
+            $"</ItemGroup>"
+            ;
+
+        string nodes_android_resources_xml_snippet =
+           $"<ItemGroup xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">"
+                + Environment.NewLine +
+            $@"     <!-- <AndroidResource Include=""Resources\layout\Main.axml"" /> -->"
+                + Environment.NewLine +
+            $"</ItemGroup>"
+            ;
+
+        string content_project_csproj = null;
+
+        string path_output_project_csproj = null;
+
+        string path_content_project_csproj = null;
 
         private void ProcessProject(string path_folder_project)
         {
@@ -194,27 +237,49 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
             {
                 Directory.CreateDirectory(path_folder_project);
             }
-            string path_content_android_manifest = Path.Combine
-                                                        (
-                                                            new string[]
-                                                            {
-                                                                "Files",
-                                                                "Sample.App.XamarinAndroid",
-                                                                "Sample.App.XamarinAndroid.csproj",
-                                                            }
-                                                        );
 
-            string content_android_manifest = File.ReadAllText(path_content_android_manifest);
+            path_content_project_csproj = Path.Combine
+                                                    (
+                                                        new string[]
+                                                        {
+                                                            "Files",
+                                                            "Sample.App.XamarinAndroid",
+                                                            "Sample.App.XamarinAndroid.csproj",
+                                                        }
+                                                    );
 
-            string path_output_android_manifest = Path.Combine
-                                                        (
-                                                            new string[]
-                                                            {
-                                                                path_folder_project,
-                                                                "Sample.App.XamarinAndroid.csproj",
-                                                            }
-                                                        );
-            File.WriteAllText(path_output_android_manifest, content_android_manifest);
+            content_project_csproj = File.ReadAllText(path_content_project_csproj);
+
+            path_output_project_csproj = Path.Combine
+                                                    (
+                                                        new string[]
+                                                        {
+                                                            path_folder_project,
+                                                            //"Sample.App.XamarinAndroid.csproj",
+                                                            $"{ProjectName}.csproj"
+                                                        }
+                                                    );
+            File.WriteAllText(path_output_project_csproj, content_project_csproj);
+
+            xmldoc = new System.Xml.XmlDocument();
+            xmldoc.Load(path_output_project_csproj);
+
+            ns = new System.Xml.XmlNamespaceManager(xmldoc.NameTable);
+            ns.AddNamespace("msbld", "http://schemas.microsoft.com/developer/msbuild/2003");
+
+            //System.Xml.XmlNodeList nodes = xmldoc.SelectNodes("//msbld:RootNamespace", ns);
+            node_namespace = xmldoc.SelectSingleNode("//msbld:RootNamespace", ns);
+            node_assembly = xmldoc.SelectSingleNode("//msbld:AssemblyName", ns);
+            node_project_guid = xmldoc.SelectSingleNode("//msbld:ProjectGuid", ns);
+
+            node_namespace.InnerText = this.ProjectName;
+
+            node_assembly.InnerText = this.ProjectName;
+
+            node_project_guid.InnerText = Guid.NewGuid().ToString();
+
+            nodes_compile = xmldoc.SelectNodes(@"/msbld:Project/msbld:ItemGroup/msbld:Compile", ns);
+
 
             return;
         }
@@ -274,6 +339,29 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
             Console.WriteLine($"Porcessed: Resources/layout: {fi}");
             Console.ResetColor();
 
+            string filename = Path.GetFileName(fi).Replace(".xml", ".axml");
+            string output_project_folder = ProjectStructureFolders["Project Folder"];
+            string fo = Path.Combine
+                                (
+                                    output_project_folder,
+                                    "Resources",
+                                    "layout",
+                                    filename
+                                );
+            File.Copy(fi, fo, overwrite: true);
+
+            string old = 
+                $@"     <!-- <AndroidResource Include=""Resources\layout\Main.axml"" /> -->"
+                ;
+
+            string @new =
+                $@"       <AndroidResource Include=""Resources\layout\{filename}"" />"
+                + Environment.NewLine +
+                $@"     <!-- <AndroidResource Include=""Resources\layout\Main.axml"" /> -->"
+                ;
+
+            nodes_android_resources_xml_snippet = nodes_android_resources_xml_snippet.Replace(old, @new);
+            
             return;
         }
 
