@@ -357,6 +357,55 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
             File.WriteAllText(path_output_assembly_info, content_assembly_info);
 
 
+            string path_content_resources_designer = Path.Combine
+                                                       (
+                                                           new string[]
+                                                           {
+                                                                "Files",
+                                                                "Sample.App.XamarinAndroid",
+                                                                "Resources",
+                                                                "Resource.designer.cs",
+                                                           }
+                                                       );
+
+            string content_resources_designer = File.ReadAllText(path_content_resources_designer);
+
+            string path_folder_project_properties03 = ProjectStructureFolders["Project Folder/Resources"];
+             string path_output_resources_designer = Path.Combine
+                                                        (
+                                                            new string[]
+                                                            {
+                                                                path_folder_project_properties03,
+                                                                "Resource.designer.cs",
+                                                            }
+                                                        );
+            File.WriteAllText(path_output_resources_designer, content_resources_designer);
+
+
+            string path_content_about_resources = Path.Combine
+                                                       (
+                                                           new string[]
+                                                           {
+                                                                "Files",
+                                                                "Sample.App.XamarinAndroid",
+                                                                "Resources",
+                                                                "AboutResources.txt",
+                                                           }
+                                                       );
+
+            string content_about_resources = File.ReadAllText(path_content_about_resources);
+
+            string path_output_about_resources = Path.Combine
+                                                       (
+                                                           new string[]
+                                                           {
+                                                                path_folder_project_properties03,
+                                                                "AboutResources.txt",
+                                                           }
+                                                       );
+            File.WriteAllText(path_output_about_resources, content_about_resources);
+
+
             string node_to_find =
                 @"/msbld:Project/msbld:ItemGroup/msbld:None[@Include='Properties\AndroidManifest.xml']"
                 ;
@@ -421,6 +470,29 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
             Console.WriteLine($"Porcessed: Resources/values: {fi}");
             Console.ResetColor();
 
+            string filename = Path.GetFileName(fi);
+            string output_project_folder = ProjectStructureFolders["Project Folder"];
+            string fo = Path.Combine
+                                (
+                                    output_project_folder,
+                                    "Resources",
+                                    "values",
+                                    filename
+                                );
+            File.Copy(fi, fo, overwrite: true);
+
+            string old =
+                $@"     <!-- <AndroidResource Include=""Resources\layout\Main.axml"" /> -->"
+                ;
+
+            string @new =
+                $@"       <AndroidResource Include=""Resources\values\{filename}"" />"
+                + Environment.NewLine +
+                $@"     <!-- <AndroidResource Include=""Resources\layout\Main.axml"" /> -->"
+                ;
+
+            nodes_android_resources_xml_snippet = nodes_android_resources_xml_snippet.Replace(old, @new);
+
             return;
         }
 
@@ -429,6 +501,29 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine($"Porcessed: Resources/drawable: {fi}");
             Console.ResetColor();
+
+            string filename = Path.GetFileName(fi);
+            string output_project_folder = ProjectStructureFolders["Project Folder"];
+            string fo = Path.Combine
+                                (
+                                    output_project_folder,
+                                    "Resources",
+                                    "drawable",
+                                    filename
+                                );
+            File.Copy(fi, fo, overwrite: true);
+
+            string old =
+                $@"     <!-- <AndroidResource Include=""Resources\layout\Main.axml"" /> -->"
+                ;
+
+            string @new =
+                $@"       <AndroidResource Include=""Resources\drawable\{filename}"" />"
+                + Environment.NewLine +
+                $@"     <!-- <AndroidResource Include=""Resources\layout\Main.axml"" /> -->"
+                ;
+
+            nodes_android_resources_xml_snippet = nodes_android_resources_xml_snippet.Replace(old, @new);
 
             return;
         }
