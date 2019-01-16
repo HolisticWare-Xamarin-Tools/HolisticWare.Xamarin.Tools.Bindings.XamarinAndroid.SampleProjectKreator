@@ -72,6 +72,73 @@ namespace Bindings.Sample.Project.Kreator.App.Console.Mono
                     InputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-ttymsd/",
                     OutputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
                 ),
+                (
+                    GroupName : "Android.Support",
+                    FeatureName : "CoordinatorLayout",
+                    ProjectName : "zhaochenpu",
+                    InputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-zhaochenpu/",
+                    OutputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+                ),
+                (
+                    GroupName : "Android.Support",
+                    FeatureName : "CoordinatorLayout",
+                    ProjectName : "takahirom",
+                    InputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-takahirom/",
+                    OutputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+                ),
+                (
+                    GroupName : "Android.Support",
+                    FeatureName : "CoordinatorLayout",
+                    ProjectName : "ggajews",
+                    InputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-ggajews/",
+                    OutputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+                ),
+
+
+
+
+                (
+                    GroupName : "Android.Support",
+                    FeatureName : "CoordinatorLayout",
+                    ProjectName : "ggajews",
+                    InputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-ggajews/",
+                    OutputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+                ),
+                (
+                    GroupName : "Android.Support",
+                    FeatureName : "CoordinatorLayout",
+                    ProjectName : "sungerk",
+                    InputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-sungerk/",
+                    OutputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+                ),
+                (
+                    GroupName : "Android.Support",
+                    FeatureName : "CoordinatorLayout",
+                    ProjectName : "gdutxiaoxu",
+                    InputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-gdutxiaoxu/",
+                    OutputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+                ),
+                (
+                    GroupName : "Android.Support",
+                    FeatureName : "CoordinatorLayout",
+                    ProjectName : "ggajews",
+                    InputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-ggajews/",
+                    OutputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+                ),
+                (
+                    GroupName : "Android.Support",
+                    FeatureName : "CoordinatorLayout",
+                    ProjectName : "loonggg",
+                    InputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-loonggg/",
+                    OutputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+                ),
+                (
+                    GroupName : "Android.Support",
+                    FeatureName : "CoordinatorLayout",
+                    ProjectName : "saulmm",
+                    InputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/externals/CoordinatorLayout-saulmm/",
+                    OutputFolderPath : $"../../../../hw-tools/Xamarin.Android.Samples/samples/Android.Support/CoordinatorLayout/"
+                ),
             };
 
             foreach
