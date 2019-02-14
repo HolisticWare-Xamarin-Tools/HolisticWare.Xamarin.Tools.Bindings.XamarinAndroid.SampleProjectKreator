@@ -17,6 +17,7 @@ to get downloadable zip of the repo:
 
 *   https://codelabs.developers.google.com/?cat=Android
 
+*  https://github.com/googlesamples/android-architecture
 
 ## Android.Support
 
@@ -30,12 +31,3 @@ to get downloadable zip of the repo:
 
 
 ## Material
-
-*   
-
-*   
-
-
-
-
-
