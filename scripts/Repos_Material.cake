@@ -11,9 +11,13 @@ Repositories_Material = new Dictionary<string, Dictionary<string, string> >()
                     "https://github.com/hitherejoe/HackerNewsReader"
                 },
                 {
-                    "android-design-library",
+                    "design-library",
                     "https://github.com/googlecodelabs/android-design-library"
                 },
+                {
+                    "topeka",
+                    "https://github.com/googlesamples/android-topeka"
+                }
             }
         },  
     };

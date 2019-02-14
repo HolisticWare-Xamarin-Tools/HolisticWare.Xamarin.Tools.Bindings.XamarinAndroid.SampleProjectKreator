@@ -35,11 +35,11 @@ Repositories_AndroidX = new Dictionary<string, Dictionary<string, string> >()
                     "https://github.com/mariopce/androidx-sample"
                 },
                 {
-                    "android-sunflower",
+                    "sunflower",
                     "https://github.com/googlesamples/android-sunflower"
                 },
                 {
-                    "android-navigation-example",
+                    "navigation-example",
                     "https://github.com/prasannajeet/android-navigation-example"
                 },
                 {
@@ -91,11 +91,11 @@ Repositories_AndroidX = new Dictionary<string, Dictionary<string, string> >()
                     "https://github.com/adrielcafe/NoMansWallpaperApp"
                 },
                 {
-                    "AndroidJetpackTemplate",
+                    "CrpytoWatch-Jetpack",
                     "https://github.com/MINOSai/CrpytoWatch-Jetpack"
                 },
                 {
-                    "",
+                    "AndroidJetpackTemplate",
                     "https://github.com/umair13adil/AndroidJetpackTemplate"
                 },
                 {
@@ -141,9 +141,81 @@ Repositories_AndroidX = new Dictionary<string, Dictionary<string, string> >()
             new Dictionary<string, string>()
             {
                 {
-                    "android-workmanager",
+                    "workmanager",
                     "https://github.com/googlecodelabs/android-workmanager"
                 },
             }
         },  
+        {
+            "AndroidX-JetPack-Architecture-Components-googlesamples",
+            new Dictionary<string, string>()
+            {
+                {
+                    "todo-mvp",
+                    "https://github.com/googlesamples/android-architecture/archive/todo-mvp.zip"
+                },
+                {
+                    "todo-mvp-clean",
+                    "https://github.com/googlesamples/android-architecture/archive/todo-mvp-clean.zip"
+                },
+                {
+                    "todo-mvp-dagger",
+                    "https://github.com/googlesamples/android-architecture/archive/todo-mvp-dagger.zip"
+                },
+                {
+                    "todo-mvp-rxjava",
+                    "https://github.com/googlesamples/android-architecture/archive/todo-mvp-rxjava.zip"
+                },
+                {
+                    "todo-mvvm-databinding",
+                    "https://github.com/googlesamples/android-architecture/archive/todo-mvvm-databinding.zip"
+                },
+                {
+                    "todo-mvvm-live",
+                    "https://github.com/googlesamples/android-architecture/archive/todo-mvvm-live.zip"
+                },
+                {
+                    "todo-mvp-kotlin",
+                    "https://github.com/googlesamples/android-architecture/archive/todo-mvp-kotlin.zip"
+                },
+                {
+                    "todo-mvvm-live-kotlin",
+                    "https://github.com/googlesamples/android-architecture/archive/todo-mvvm-live-kotlin.zip"
+                },
+                {
+                    "todo-mvp-fragmentless",
+                    "https://github.com/Syhids/android-architecture/archive/todo-mvp-fragmentless.zip"
+                },
+                {
+                    "todo-mvp-conductor",
+                    "https://github.com/grepx/android-architecture/archive/todo-mvp-conductor.zip"
+                },
+                {
+                    "todo-mvi-rxjava",
+                    "https://github.com/oldergod/android-architecture/archive/todo-mvi-rxjava.zip"
+                },
+                {
+                    "todo-mvp-kotlin-coroutines",
+                    "https://github.com/dmytrodanylyk/android-architecture/archive/todo-mvp-kotlin-coroutines.zip"
+                },
+                {
+                    "deprecated-todo-mvp-loaders",
+                    "https://github.com/googlesamples/android-architecture/archive/deprecated-todo-mvp-loaders.zip"
+                },
+                {
+                    "deprecated-todo-databinding",
+                    "https://github.com/googlesamples/android-architecture/archive/deprecated-todo-databinding.zip"
+                },
+                {
+                    "deprecated-todo-mvp-contentproviders",
+                    "https://github.com/googlesamples/android-architecture/archive/deprecated-todo-mvp-contentproviders.zip"
+                },
+                {
+                    "dev-todo-mvvm-rxjava",
+                    "https://github.com/googlesamples/android-architecture/archive/dev-todo-mvvm-rxjava.zip"
+                },
+            }   
+        }
     };
+
+

@@ -13,7 +13,17 @@ Repositories_GooglePLayServices = new Dictionary<string, Dictionary<string, stri
                 {
                     "WatchTower",
                     "https://github.com/hitherejoe/WatchTower"
-                }
+                },
+                {
+                    "google-photos",
+                    "https://github.com/googlesamples/google-photos"
+                },
+                {
+                    "google-services",
+                    "https://github.com/googlesamples/google-services"
+                },
             }
         },  
     };
+                
+                

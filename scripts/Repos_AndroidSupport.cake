@@ -7,41 +7,70 @@ Repositories_AndroidSupport = new Dictionary<string, Dictionary<string, string> 
             new Dictionary<string, string>()
             {
                 {
-                    "android-architecture-components",
+                    "architecture-components",
                     "https://github.com/googlesamples/android-architecture-components"
                 },
                 {
-                    "android-AppShortcuts",
+                    "AppShortcuts",
                     "https://github.com/googlesamples/android-AppShortcuts"
                 },
                 {
-                    "android-AutofillFramework",
+                    "AutofillFramework",
                     "https://github.com/googlesamples/android-AutofillFramework"
                 },
                 {
-                    "android-DownloadableFonts",
+                    "DownloadableFonts",
                     "https://github.com/googlesamples/android-DownloadableFonts"
                 },
                 {
-                    "android-EmojiCompat",
+                    "EmojiCompat",
                     "https://github.com/googlesamples/android-EmojiCompat"
                 },
                 {
-                    "android-JobScheduler",
+                    "JobScheduler",
                     "https://github.com/googlesamples/android-JobScheduler"
                 },
                 {
-                    "android-NotificationChannels",
+                    "NotificationChannels",
                     "https://github.com/googlesamples/android-NotificationChannels"
                 },
                 {
-                    "android-instant-apps",
+                    "instant-apps",
                     "https://github.com/googlesamples/android-instant-apps"
                 },
                 {
-                    "android-sunflower",
-                    "https://github.com/googlesamples/android-sunflower"
+                    "BasicMediaDecoder",
+                    "https://github.com/googlesamples/android-BasicMediaDecoder"
                 },
+                {
+                    "Camera2Basic",
+                    "https://github.com/googlesamples/android-Camera2Basic"
+                },
+                {
+                    "ConstraintLayoutExamples",
+                    "https://github.com/googlesamples/android-ConstraintLayoutExamples"
+                },
+                {
+                    "credentials",
+                    "https://github.com/googlesamples/android-credentials"
+                },
+                {
+                    "media-controller",
+                    "https://github.com/googlesamples/android-media-controller"
+                },
+                {
+                    "SliceViewer",
+                    "https://github.com/googlesamples/android-SliceViewer"
+                },
+                {
+                    "UniversalMusicPlayer",
+                    "https://github.com/googlesamples/android-UniversalMusicPlayer"
+                },
+                {
+                    "WearVerifyRemoteApp",
+                    "https://github.com/googlesamples/android-WearVerifyRemoteApp"
+                },
+                
             }
         },  
         {
@@ -49,7 +78,7 @@ Repositories_AndroidSupport = new Dictionary<string, Dictionary<string, string> 
             new Dictionary<string, string>()
             {
                 {
-                    "android-lifecycles",
+                    "lifecycles",
                     "https://github.com/googlecodelabs/android-lifecycles"
                 },
                 {
@@ -61,7 +90,7 @@ Repositories_AndroidSupport = new Dictionary<string, Dictionary<string, string> 
                     "https://github.com/googlecodelabs/sheets-api"
                 },
                 {
-                    "android-navigation",
+                    "navigation",
                     "https://github.com/googlecodelabs/android-navigation"
                 },
                 {
@@ -71,3 +100,7 @@ Repositories_AndroidSupport = new Dictionary<string, Dictionary<string, string> 
             }
         },  
     };
+                
+                
+
+
