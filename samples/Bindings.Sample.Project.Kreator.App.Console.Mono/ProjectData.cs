@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Bindings.Sample.Project.Kreator.App.Console.Mono
 {
-    public class ProjectData
+    public partial class ProjectData
     {
         static ProjectData()
         {
@@ -37,6 +37,7 @@ namespace Bindings.Sample.Project.Kreator.App.Console.Mono
                         > ProjectsDataToConvert
         {
             get;
+            set;
         }
 
 

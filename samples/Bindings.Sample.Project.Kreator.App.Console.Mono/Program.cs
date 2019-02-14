@@ -14,13 +14,6 @@ namespace Bindings.Sample.Project.Kreator.App.Console.Mono
             "/Projects/hw-tools/SampleProjectKreator/samples/App.XamarinAndroid/App.XamarinAndroid.csproj"
             ;
 
-        static List<(
-                        string GroupName,
-                        string FeatureName,
-                        string ProjectName,
-                        string InputFolderPath,
-                        string OutputFolderPath
-                    )> ProjectsDataToConvert;
         static List<ProjectKreator> ProjectKreators;
 
         static ProjectKreator project_kreator = null;
@@ -38,7 +31,7 @@ namespace Bindings.Sample.Project.Kreator.App.Console.Mono
                         string ProjectName,
                         string InputFolderPath,
                         string OutputFolderPath
-                    ) p in ProjectsDataToConvert
+                    ) p in ProjectData.ProjectsDataToConvert
                 )
             {
                 project_kreator = new ProjectKreator()

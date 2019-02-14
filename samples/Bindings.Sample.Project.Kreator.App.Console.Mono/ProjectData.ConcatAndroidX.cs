@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace Bindings.Sample.Project.Kreator.App.Console.Mono
 {
-    public class ProjectData
+    public partial class ProjectData
     {
         static void ConcatAndroidX()
         {
-            ProjectsDataToConvert.Concat
+            ProjectsDataToConvert = ProjectsDataToConvert.Concat
                 (
                     new List<(
                                 string GroupName,
@@ -26,7 +26,7 @@ namespace Bindings.Sample.Project.Kreator.App.Console.Mono
                             OutputFolderPath : $"/Projects/tmp/Xamarin.Android.Samples/output/Android.Support/CoordinatorLayout/"
                         ),
                     }
-                );
+                ).ToList();
 
             return;
         }
