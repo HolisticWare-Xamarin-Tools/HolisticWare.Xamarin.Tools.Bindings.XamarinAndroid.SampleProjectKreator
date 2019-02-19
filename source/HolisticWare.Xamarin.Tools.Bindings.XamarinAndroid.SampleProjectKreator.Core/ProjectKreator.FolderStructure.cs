@@ -59,9 +59,41 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
                                 );
             ProjectStructureFolders.Add
                                 (
-                                    "Project Folder/Resources/drawable",
-                                    Path.Combine(ProjectStructureFolders["Project Folder"], "Resources", "drawable")
+                                    "Project Folder/Resources/drawable-ldpi",
+                                    Path.Combine(ProjectStructureFolders["Project Folder"], "Resources", "drawable-ldpi")
                                 );
+            ProjectStructureFolders.Add
+                                (
+                                    "Project Folder/Resources/drawable-mdpi",
+                                    Path.Combine(ProjectStructureFolders["Project Folder"], "Resources", "drawable-mdpi")
+                                );
+            ProjectStructureFolders.Add
+                                (
+                                    "Project Folder/Resources/drawable-hdpi",
+                                    Path.Combine(ProjectStructureFolders["Project Folder"], "Resources", "drawable-hdpi")
+                                );
+            ProjectStructureFolders.Add
+                                (
+                                    "Project Folder/Resources/drawable-nodpi",
+                                    Path.Combine(ProjectStructureFolders["Project Folder"], "Resources", "drawable-nodpi")
+                                );
+            ProjectStructureFolders.Add
+                                (
+                                    "Project Folder/Resources/drawable-xdpi",
+                                    Path.Combine(ProjectStructureFolders["Project Folder"], "Resources", "drawable-xdpi")
+                                );
+            ProjectStructureFolders.Add
+                                (
+                                    "Project Folder/Resources/drawable-xxdpi",
+                                    Path.Combine(ProjectStructureFolders["Project Folder"], "Resources", "drawable-xxdpi")
+                                );
+            ProjectStructureFolders.Add
+                                (
+                                    "Project Folder/Resources/drawable-xxxdpi",
+                                    Path.Combine(ProjectStructureFolders["Project Folder"], "Resources", "drawable-xxxdpi")
+                                );
+
+
             ProjectStructureFolders.Add
                                 (
                                     "Project Folder/Resources/layout",
