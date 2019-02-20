@@ -180,6 +180,7 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
             string[] files_output = Directory.GetFiles(content_directory, "*", SearchOption.AllDirectories);
 
             string[] fils_input_java = ProcessInputFilesJavaCode(input_folder);
+            string[] fils_input_kotlin = ProcessInputFilesKotlinCode(input_folder);
             string[] fils_input_resources = ProcessInputFilesResources(input_folder);
 
             ProcessInputFilesPackagesConfig();
@@ -228,9 +229,113 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
             File.WriteAllText(path_output_main_activity, content_main_activity);
             //----------------------------------------------------------------------------------------------
 
-
+            //if (input_folder.Contains($@"output/repos"))
+            //{
+            //    input_folder = input_folder.Replace("../../", "");
+            //}
             string[] folders_input = Directory.GetDirectories(input_folder, "*", SearchOption.AllDirectories);
             string[] files_input = Directory.GetFiles(input_folder, "*.java", SearchOption.AllDirectories);
+
+            string folder_code_java_csharp = Path.Combine
+                                            (
+                                                path_folder_project,
+                                                "code-csharp-ported-from-java"
+                                            );
+            if (!Directory.Exists(folder_code_java_csharp))
+            {
+                Directory.CreateDirectory(folder_code_java_csharp);
+            }
+
+            foreach (string fi in files_input)
+            {
+                bool skip_tests = false;
+                switch(fi)
+                {
+                    case string a when a.Contains ("app/src/androidTest/java"):
+                        skip_tests = true;
+                        break;
+                    case string a when a.Contains ("app/src/androidTest"):
+                        skip_tests = true;
+                        break;
+                    case string a when a.Contains ("src/androidTest"):
+                        skip_tests = true;
+                        break;
+                    case string a when a.Contains ("androidTest"):
+                        skip_tests = true;
+                        break;
+                    default:
+                        break;
+                }
+
+                if (true == skip_tests)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine($"      skipping Java code for tests");
+                    Console.WriteLine($"            file = {fi}");
+                    Console.ResetColor();
+                    continue;
+                }
+
+                string filename = Path.GetFileName(fi);
+                string fo = Path.Combine(folder_code_java_csharp, $"{filename}.cs");
+                File.Copy(fi, fo, overwrite: true);
+
+                //----------------------------------------------------------------------------------------------
+                string node_to_find =
+                    $@"/msbld:Project/msbld:ItemGroup/msbld:Compile[@Include='MainActivity.cs']"
+                    ;
+                System.Xml.XmlNode node = xmldoc.SelectSingleNode(node_to_find, ns);
+
+                System.Xml.XmlNode node_new = xmldoc.CreateNode
+                                                        (
+                                                            System.Xml.XmlNodeType.Element,
+                                                            "Compile",
+                                                            "http://schemas.microsoft.com/developer/msbuild/2003"
+                                                        );
+                System.Xml.XmlAttribute attribute_compile = xmldoc.CreateAttribute("Include");
+                attribute_compile.Value = $@"code-csharp-ported-from-java\{filename}.cs";
+                node_new.Attributes.Append(attribute_compile);
+
+                node?.ParentNode.AppendChild(node_new);
+                //----------------------------------------------------------------------------------------------
+
+                //Transpile(fo);
+            }
+
+            return files_input;
+        }
+
+        public string[] ProcessInputFilesKotlinCode(string input_folder)
+        {
+            string path_folder_project = ProjectStructureFolders["Project Folder"];
+
+            //----------------------------------------------------------------------------------------------
+            string path_content_main_activity = Path.Combine
+                                                        (
+                                                            new string[]
+                                                            {
+                                                                "Files",
+                                                                "Sample.App.XamarinAndroid",
+                                                                "MainActivity.cs",
+                                                            }
+                                                        );
+
+            string content_main_activity = File.ReadAllText(path_content_main_activity);
+
+            string path_output_main_activity = Path.Combine
+                                                        (
+                                                            new string[]
+                                                            {
+                                                                path_folder_project,
+                                                                "MainActivity.cs",
+                                                            }
+                                                        );
+            File.WriteAllText(path_output_main_activity, content_main_activity);
+            //----------------------------------------------------------------------------------------------
+
+
+            string[] folders_input = Directory.GetDirectories(input_folder, "*", SearchOption.AllDirectories);
+            string[] files_input = Directory.GetFiles(input_folder, "*.kt", SearchOption.AllDirectories);
 
             string folder_code_java_csharp = Path.Combine
                                             (
@@ -269,8 +374,6 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
 
                 //Transpile(fo);
             }
-
-
 
             return files_input;
         }
