@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core
 {
@@ -56,6 +57,11 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
                                 (
                                     "Project Folder/Resources",
                                     Path.Combine(ProjectStructureFolders["Project Folder"], "Resources")
+                                );
+            ProjectStructureFolders.Add
+                                (
+                                    "Project Folder/Resources/drawable",
+                                    Path.Combine(ProjectStructureFolders["Project Folder"], "Resources", "drawable")
                                 );
             ProjectStructureFolders.Add
                                 (
@@ -236,6 +242,7 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
             string[] folders_input = Directory.GetDirectories(input_folder, "*", SearchOption.AllDirectories);
             string[] files_input = Directory.GetFiles(input_folder, "*.java", SearchOption.AllDirectories);
 
+            string path_common = this.GetFolderCommon(files_input);
             string folder_code_java_csharp = Path.Combine
                                             (
                                                 path_folder_project,
@@ -917,5 +924,63 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
         {
             throw new NotImplementedException();
         }
+
+        private string GetFolderCommon(string[] files_input)
+        {
+            Dictionary < string, (int Length, string[] Parts)> path_parts = null;
+            path_parts = new Dictionary<string, (int Length, string[] Parts)>();
+
+            List<string> path_parts_common = new List<string>();
+            int length_max = 0;
+
+            string path_common = null;
+
+            for(int i = 0; i < files_input.Length; i++)
+            {
+                string[] parts = files_input[i].Split
+                        (
+                            new char[]
+                            {
+                                Path.PathSeparator,
+                                Path.DirectorySeparatorChar
+                            },
+                            StringSplitOptions.None
+                        );
+                int l = parts.Length;
+                if ( l > length_max)
+                {
+                    length_max = l;
+                }
+
+                path_parts.Add(files_input[i], (Length: l, Parts: parts));
+            }
+
+            for (int j = 0; j < length_max; j++)
+            {
+                bool is_part_equal = false;
+                string part = (path_parts.ElementAt(j).Value.Parts[0]);
+
+                for(int i = 1; i < path_parts.Count; i++)
+                {
+                    string part_next = (path_parts.ElementAt(j).Value.Parts[i]);
+
+                    if (part == part_next)
+                    {
+                        is_part_equal = true;
+                        path_parts_common.Add(part);
+                    }
+                    else
+                    {
+                        is_part_equal = false;
+                        break;
+                    }
+                }
+
+            }
+
+            return path_common;
+        }
+
+
     }
 }
