@@ -29,6 +29,8 @@
     <Compile Include="ProjectKreator.CommandLineOptions.cs" />
     <Compile Include="ProjectKreator.cs" />
     <Compile Include="ProjectKreator.FolderStructure.cs" />
+    <Compile Include="Files\Porting\Transpiler.cs" />
+    <Compile Include="Files\Porting\CommentingNoOpTranspiler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Files\Porting\porting-mapping.csv" />

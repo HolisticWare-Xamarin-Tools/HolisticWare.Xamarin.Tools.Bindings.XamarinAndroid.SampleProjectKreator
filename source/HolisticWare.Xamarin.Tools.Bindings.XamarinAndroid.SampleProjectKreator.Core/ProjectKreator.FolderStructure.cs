@@ -285,7 +285,12 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
 
                 string filename = Path.GetFileName(fi);
                 string fo = Path.Combine(folder_code_java_csharp, $"{filename}.cs");
-                File.Copy(fi, fo, overwrite: true);
+
+                string[] code_java = File.ReadAllLines(fi);
+                Porting.Transpilers.CommentingNoOpTranspiler transpiler = null;
+                transpiler = new Porting.Transpilers.CommentingNoOpTranspiler();
+                IEnumerable<string> code_transpiled = transpiler.Transpile(code_java);
+                File.WriteAllLines(fo, code_transpiled.ToArray());
 
                 //----------------------------------------------------------------------------------------------
                 string node_to_find =
@@ -305,8 +310,6 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
 
                 node?.ParentNode.AppendChild(node_new);
                 //----------------------------------------------------------------------------------------------
-
-                //Transpile(fo);
             }
 
             return files_input;
@@ -957,24 +960,24 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
 
             for (int j = 0; j < length_max; j++)
             {
-                bool is_part_equal = false;
-                string part = (path_parts.ElementAt(j).Value.Parts[0]);
+                //bool is_part_equal = false;
+                //string part = (path_parts.ElementAt(j).Value.Parts[0]);
 
-                for(int i = 1; i < path_parts.Count; i++)
-                {
-                    string part_next = (path_parts.ElementAt(j).Value.Parts[i]);
+                //for(int i = 1; i < path_parts.Count; i++)
+                //{
+                //    string part_next = (path_parts.ElementAt(j).Value.Parts[i]);
 
-                    if (part == part_next)
-                    {
-                        is_part_equal = true;
-                        path_parts_common.Add(part);
-                    }
-                    else
-                    {
-                        is_part_equal = false;
-                        break;
-                    }
-                }
+                //    if (part == part_next)
+                //    {
+                //        is_part_equal = true;
+                //        path_parts_common.Add(part);
+                //    }
+                //    else
+                //    {
+                //        is_part_equal = false;
+                //        break;
+                //    }
+                //}
 
             }
 
