@@ -1,8 +1,11 @@
+//#addin nuget:?package=Cake.Gradle
+
 #load "./Repos_AndroidSupport.cake"
 #load "./Repos_AndroidX.cake"
 #load "./Repos_Google.Play.Services.cake"
 #load "./Repos_Firebase.cake"
 #load "./Repos_Material.cake"
+#load "./Repos_Awsome_Android_UI.cake"
 
 string path_output_repos = System.IO.Path.Combine
                                             (
@@ -79,6 +82,10 @@ Task ("externals")
                                 .Concat(Repositories_Material)
                                 .ToDictionary(kvp => kvp.Key, kvp => kvp.Value)
                                 ;
+            Repositories = Repositories
+                                .Concat(Repos_Awsome_Android_UI)
+                                .ToDictionary(kvp => kvp.Key, kvp => kvp.Value)
+                                ;
 
 
             foreach(KeyValuePair<string, Dictionary<string, string> > repo_group in Repositories)
@@ -152,7 +159,21 @@ Task ("externals")
         }
     );
 
+Task("externals-build-gradle")
+.Does
+(
+    () =>
+    {
+        //Gradle.WithArguments("--version").Run();
 
+        foreach (KeyValuePair<string, Dictionary<string, string> > repo_group in Repositories)
+        {
+            //Gradle.FromPath("./example").WithTask("hello").Run();
+        }
+
+        return;
+    }
+);
 Task("externals-update-git-repos")
 .Does
 (
