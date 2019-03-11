@@ -160,7 +160,7 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
                                                         {
                                                             "Files",
                                                             "Sample.App.XamarinAndroid",
-                                                            "Sample.App.XamarinAndroid.csproj",
+                                                            "Sample.App.XamarinAndroid.csproj.xml",
                                                         }
                                                     );
             path_output_project_csproj = Path.Combine
