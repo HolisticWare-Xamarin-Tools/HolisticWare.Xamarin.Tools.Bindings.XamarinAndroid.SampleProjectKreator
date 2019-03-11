@@ -1,16 +1,24 @@
-//#addin nuget:?package=Cake.Gradle
+#addin nuget:?package=Cake.Git
 
-#load "./Repos_AndroidSupport.cake"
-#load "./Repos_AndroidX.cake"
-#load "./Repos_Google.Play.Services.cake"
-#load "./Repos_Firebase.cake"
-#load "./Repos_Material.cake"
-#load "./Repos_Awsome_Android_UI.cake"
+// https://github.com/abeggchr/cake-gradle
+// #addin nuget:?package=Cake.Gradle
+
+#load "./externals/repos-AndroidSupport.cake"
+#load "./externals/repos-AndroidX.cake"
+#load "./externals/repos-Google.Play.Services.cake"
+#load "./externals/repos-Firebase.cake"
+#load "./externals/repos-Material.cake"
+#load "./externals/repos-Awsome_Android_UI.cake"
+
+
+Dictionary<string, Dictionary<string, string> > Repositories = null;
+Repositories = new Dictionary<string, Dictionary<string, string> >();
 
 string path_output_repos = System.IO.Path.Combine
                                             (
                                                 new string[]
                                                 {
+                                                    "..",
                                                     "output",
                                                     "repos",
                                                 }
@@ -54,8 +62,19 @@ Information($"git email: {git_email}");
 
 
 Task ("externals")
-    //.IsDependentOn ("externals-base")
-    // .WithCriteria (!FileExists ("./externals/HolisticWare.Core.Math.Statistics.aar"))
+    .IsDependentOn ("externals-clone-repos")
+    .IsDependentOn ("externals-download-code")
+    .IsDependentOn ("externals-build-cake")
+    .IsDependentOn ("externals-build-gradle")
+    .IsDependentOn ("externals-build-xcode")
+    .Does
+    (
+        () =>
+        {
+        }
+    );
+
+Task ("externals-clone-repos")
     .Does
     (
         () =>
@@ -156,6 +175,82 @@ Task ("externals")
                 }
             }
             Console.ResetColor();
+
+            return;
+        }
+    );
+
+
+Task ("externals-build-cake")
+    //.IsDependentOn ("externals-base")
+    // .WithCriteria (!FileExists ("./externals/HolisticWare.Core.Math.Statistics.aar"))
+    .Does
+    (
+        () =>
+        {
+            FilePathCollection files = GetFiles("./external*/**/build.cake");
+            foreach(FilePath file in files)
+            {
+                Information("File: {0}", file);
+                CakeExecuteScript
+                    (
+                        file,
+                        new CakeSettings
+                        {
+                            Verbosity = Verbosity.Diagnostic,
+                            Arguments = new Dictionary<string, string>()
+                            {
+                                //{"verbosity",   "diagnostic"},
+                                {"target",      "libs"},
+                            },
+                        }
+                    );
+            }
+
+            return;
+        }
+    );
+
+Task ("externals-build-gradle")
+    //.IsDependentOn ("externals-base")
+    // .WithCriteria (!FileExists ("./externals/HolisticWare.Core.Math.Statistics.aar"))
+    .Does
+    (
+        () =>
+        {
+        }
+    );
+Task ("externals-folders")
+    //.IsDependentOn ("externals-base")
+    // .WithCriteria (!FileExists ("./externals/HolisticWare.Core.Math.Statistics.aar"))
+    .Does
+    (
+        () =>
+        {
+            Information("externals ...");
+
+            string [] folders = new string[]
+            {
+                "./externals/",
+                "./externals/results/",
+                "./externals/results/unit-tests/",
+            };
+
+            foreach(string folder in folders)
+            {
+                Information($"    creating ...{folder}");
+                if (!DirectoryExists (folder))
+                {
+                    CreateDirectory (folder);
+                }
+            }
+
+            Information("    downloading ...");
+
+            // if ( ! string.IsNullOrEmpty(AAR_URL) )
+            // {
+            // 	//DownloadFile (AAR_URL, "./externals/HolisticWare.Core.Math.Statistics.aar");
+            // }
         }
     );
 
