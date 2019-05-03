@@ -84,6 +84,10 @@
     <Compile Include="ProjectData.cs" />
     <Compile Include="ProjectData.ConcatAndroidSupport.cs" />
     <Compile Include="ProjectData.ConcatAndroidX.cs" />
+    <Compile Include="ProjectData.ConcatMaterial.cs" />
+    <Compile Include="ProjectData.ConcatSceneform.cs" />
+    <Compile Include="ProjectData.ConcatOffice.cs" />
+    <Compile Include="ProjectData.ConcatGooglePlayServicesAdMob.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

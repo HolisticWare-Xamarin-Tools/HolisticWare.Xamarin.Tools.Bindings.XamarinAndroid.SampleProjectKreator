@@ -20,8 +20,10 @@ namespace Bindings.Sample.Project.Kreator.App.Console.Mono
 
                 };
 
-            ConcatAndroidSupport();
-            ConcatAndroidX();
+            //ConcatAndroidSupport();
+            //ConcatAndroidX();
+            //ConcatMaterial();
+            ConcatARCoreSceneform();
 
             return;
         }
