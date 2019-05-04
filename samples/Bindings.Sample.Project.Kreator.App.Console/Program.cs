@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using PHolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core;
+using HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core;
 
 namespace Bindings.Sample.Project.Kreator.App
 {

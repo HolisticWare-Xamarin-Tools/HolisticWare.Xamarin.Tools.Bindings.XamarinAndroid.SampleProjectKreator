@@ -82,12 +82,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProjectData.cs" />
-    <Compile Include="ProjectData.ConcatAndroidSupport.cs" />
-    <Compile Include="ProjectData.ConcatAndroidX.cs" />
-    <Compile Include="ProjectData.ConcatMaterial.cs" />
-    <Compile Include="ProjectData.ConcatSceneform.cs" />
-    <Compile Include="ProjectData.ConcatOffice.cs" />
-    <Compile Include="ProjectData.ConcatGooglePlayServicesAdMob.cs" />
+    <Compile Include="ProjectData.Concat.AndroidSupport.cs" />
+    <Compile Include="ProjectData.Concat.AndroidX.cs" />
+    <Compile Include="ProjectData.Concat.Material.cs" />
+    <Compile Include="ProjectData.Concat.Sceneform.cs" />
+    <Compile Include="ProjectData.Concat.Office365Fabric.cs" />
+    <Compile Include="ProjectData.Concat.GooglePlayServicesAdMob.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
