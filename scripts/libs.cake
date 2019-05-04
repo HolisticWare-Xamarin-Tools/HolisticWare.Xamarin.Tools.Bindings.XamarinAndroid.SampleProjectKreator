@@ -1,6 +1,11 @@
+#load "./nuget-restore.cake"
+
+LibSourceSolutions = GetFiles(source_solutions);
+LibSourceProjects = GetFiles(source_projects);
+
 //---------------------------------------------------------------------------------------
 Task("libs")
-    .IsDependentOn ("nuget-restore")
+    .IsDependentOn ("nuget-restore-libs")
     .IsDependentOn ("libs-msbuild-solutions")
     .IsDependentOn ("libs-msbuild-projects")
     .IsDependentOn ("libs-dotnet-solutions")
@@ -12,6 +17,7 @@ Task("libs")
             return;
         }
     );
+
 
 Task("libs-msbuild-solutions")
     .Does
@@ -35,8 +41,20 @@ Task("libs-msbuild-solutions")
                     new MSBuildSettings
                     {
                         Configuration = "Release",
+                        BinaryLogger = new MSBuildBinaryLogSettings 
+                        { 
+                            Enabled = true, 
+                            FileName = MakeAbsolute(new FilePath("./output/libs.binlog"))
+                                            .FullPath 
+                        }
                     }
                     //.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
+                    // c.Targets.Clear();
+                    // c.Targets.Add("Pack");
+                    // c.Properties.Add("PackageOutputPath", new [] { MakeAbsolute(outputPath).FullPath });
+                    // c.Properties.Add("PackageRequireLicenseAcceptance", new [] { "true" });
+                    // c.Properties.Add("DesignTimeBuild", new [] { "false" });
+                    // c.Properties.Add("AndroidSdkBuildToolsVersion", new [] { "28.0.3" });
                 );
             }
 
@@ -54,9 +72,14 @@ Task("libs-dotnet-solutions")
                 DotNetCoreBuild
                 (
                     sln.ToString(),
+                    // https://cakebuild.net/api/Cake.Common.Tools.DotNetCore.MSBuild/DotNetCoreMSBuildSettings/
                     new DotNetCoreBuildSettings
                     {
                         Configuration = "Debug",
+                        DiagnosticOutput = true,
+                        // DetailedSummary = true,
+                        //DistributedFileLogger = true,
+                        //DistributedFileLogger = true,
                     }
                     //.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
                 );
@@ -66,6 +89,9 @@ Task("libs-dotnet-solutions")
                     new DotNetCoreBuildSettings
                     {
                         Configuration = "Release",
+                        DiagnosticOutput = true,
+                        // DetailedSummary = true,
+                        //DistributedFileLogger = true,
                     }
                     //.WithProperty("DefineConstants", "TRACE;DEBUG;NETCOREAPP2_0;NUNIT")
                 );
@@ -111,8 +137,6 @@ Task("libs-dotnet-projects")
     (
         () =>
         {
-            FilePathCollection LibSourceProjects = GetFiles($"./source/**/*.csproj");
-
             foreach(FilePath prj in LibSourceProjects)
             {
                 DotNetCoreBuild

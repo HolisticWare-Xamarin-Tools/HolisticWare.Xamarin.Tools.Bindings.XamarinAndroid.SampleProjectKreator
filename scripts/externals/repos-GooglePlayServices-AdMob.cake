@@ -7,7 +7,7 @@ Repositories_Material = new Dictionary<string, Dictionary<string, string> >()
             new Dictionary<string, string>()
             {
                 {
-                    "Google Ads Mobile",
+                    "GooglePlayServices Google Ads Mobile",
                     "https://github.com/googleads/googleads-mobile-android-examples"
                 },
             }

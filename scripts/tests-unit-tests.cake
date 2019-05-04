@@ -1,24 +1,4 @@
 //---------------------------------------------------------------------------------------
-// unit testing
-#tool nuget:?package=NUnit.ConsoleRunner&version=3.8.0
-//#tool nuget:?package=NUnit.Console&version=3.8.0&include=../Nunit.ConsoleRunner/**/*
-//#tool nuget:?package=NUnit.Runners&version=3.8.0
-#tool "nuget:?package=xunit.runner.console"
-//---------------------------------------------------------------------------------------
-
-
-//---------------------------------------------------------------------------------------
-// reporting
-#tool "nuget:?package=ReportUnit"
-#tool "nuget:?package=ReportGenerator"
-//---------------------------------------------------------------------------------------
-
-
-// FilePathCollection UnitTestsNUnitMobileProjects = GetFiles($"./tests/unit-tests/project-references/**/*.NUnit.Xamarin*.csproj");
-// FilePathCollection UnitTestsXUnitProjects = GetFiles($"./tests/unit-tests/project-references/**/*.XUnit.csproj");
-// FilePathCollection UnitTestsMSTestProjects = GetFiles($"./tests/unit-tests/project-references/**/*.NUnit.csproj");
-
-//---------------------------------------------------------------------------------------
 Task("unit-tests")
     .IsDependentOn("libs")
     .Does
@@ -206,3 +186,4 @@ Task("unit-tests-mstest")
         }
     );
 //---------------------------------------------------------------------------------------
+

@@ -11,7 +11,7 @@ Repositories_Material = new Dictionary<string, Dictionary<string, string> >()
                     "https://github.com/OfficeDev/ui-fabric-android"
                 },
                 {
-                    "topeka",
+                    "ui-fabric-ios",
                     "https://github.com/OfficeDev/ui-fabric-ios-fabric-ios"
                 }
             }
