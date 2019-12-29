@@ -1,12 +1,12 @@
 
 
-Dictionary<string, Dictionary<string, string> > Repos_Awsome_Android_UI = null;
+Dictionary<string, Dictionary<string, string> > Repos_Android_UI = null;
 
-Repos_Awsome_Android_UI = new Dictionary<string, Dictionary<string, string> >()
+Repos_Android_UI = new Dictionary<string, Dictionary<string, string> >()
     {
         {
             // https://github.com/wasabeef/awesome-android-ui
-            "Awsome-Android-UI",
+            "Android-UI",
             new Dictionary<string, string>()
             {
                 {

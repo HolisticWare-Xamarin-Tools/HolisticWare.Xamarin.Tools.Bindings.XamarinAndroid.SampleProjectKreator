@@ -1,6 +1,6 @@
-Dictionary<string, Dictionary<string, string> > Repositories_Material = null;
+Dictionary<string, Dictionary<string, string> > Repositories_Office365_Fabric = null;
 
-Repositories_Material = new Dictionary<string, Dictionary<string, string> >()
+Repositories_Office365_Fabric = new Dictionary<string, Dictionary<string, string> >()
     {
         {
             "Office365-Fabric",

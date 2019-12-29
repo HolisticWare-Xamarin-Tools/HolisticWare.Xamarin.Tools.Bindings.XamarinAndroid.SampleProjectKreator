@@ -1,23 +1,23 @@
 
 
-Dictionary<string, Dictionary<string, string> > Repos_Awsome_Android_UI = null;
+// Dictionary<string, Dictionary<string, string> > Repos_Awsome_Android_UI = null;
 
-Repos_Awsome_Android_UI = new Dictionary<string, Dictionary<string, string> >()
-    {
-        {
-            // https://github.com/wasabeef/awesome-android-ui
-            "Card-Based-UI",
-            new Dictionary<string, string>()
-            {
-                {
-                    "",
-                    ""
-                },
-            }
-        }
-    };
+// Repos_Awsome_Android_UI = new Dictionary<string, Dictionary<string, string> >()
+//     {
+//         {
+//             // https://github.com/wasabeef/awesome-android-ui
+//             "Awsome_Android_UI",
+//             new Dictionary<string, string>()
+//             {
+//                 {
+//                     "https://github.com/wasabeef/awesome-android-ui",
+//                     "https://github.com/wasabeef/awesome-android-ui"
+//                 },
+//             }
+//         }
+//     };
 
-Repos_Awsome_Android_UI.ToList().ForEach(x => Repositories.Add(x.Key, x.Value));
+// Repos_Awsome_Android_UI.ToList().ForEach(x => Repositories.Add(x.Key, x.Value));
 
 
 /*

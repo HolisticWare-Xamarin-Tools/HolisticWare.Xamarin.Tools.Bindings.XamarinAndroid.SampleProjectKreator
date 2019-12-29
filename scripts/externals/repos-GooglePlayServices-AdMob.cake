@@ -1,6 +1,6 @@
-Dictionary<string, Dictionary<string, string> > Repositories_Material = null;
+Dictionary<string, Dictionary<string, string> > Repositories_GooglePLayServices_AdMob = null;
 
-Repositories_Material = new Dictionary<string, Dictionary<string, string> >()
+Repositories_GooglePLayServices_AdMob = new Dictionary<string, Dictionary<string, string> >()
     {
         {
             "GooglePlayServices-diverse",

@@ -1,8 +1,8 @@
 
 
-Dictionary<string, Dictionary<string, string> > Repos_Awsome_Android_UI = null;
+Dictionary<string, Dictionary<string, string> > Repos_CardBased_UI = null;
 
-Repos_Awsome_Android_UI = new Dictionary<string, Dictionary<string, string> >()
+Repos_CardBased_UI = new Dictionary<string, Dictionary<string, string> >()
     {
         {
             // https://github.com/wasabeef/awesome-android-ui
