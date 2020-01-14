@@ -27,6 +27,21 @@ to get downloadable zip of the repo:
 
 *   https://github.com/android/tv-samples
 
+### Cast Apps (Google Chromecast)
+
+*   https://github.com/googlecast/CastVideos-android
+
+*   https://developers.google.com/cast/docs/sample-apps
+
+*   https://medium.com/@quentin7b/make-your-android-app-compatible-with-your-chromecast-ca751294c4e2
+
+*   https://github.com/quentin7b/android-estimateit
+
+### Amazon Fire TV
+
+*   https://developer.amazon.com/docs/fire-tv/getting-started-developing-apps-and-games.html
+
+
 ## AndroidX
 
 ## Google.Play.Services 
