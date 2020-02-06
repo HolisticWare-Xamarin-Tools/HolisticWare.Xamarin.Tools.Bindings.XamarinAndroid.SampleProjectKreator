@@ -14,15 +14,30 @@
 
 ## AndroidX
 
+No extra dependencies:
+
 ```
-https://github.com/Gwokhov/Deadline
-https://github.com/MixSpot/WAX-Trade-Client
 https://github.com/martindisch/Material2
 https://github.com/SamsetDev/JetPack-Navigation
 https://github.com/mariopce/androidx-sample
 https://github.com/googlesamples/android-sunflower
 https://github.com/prasannajeet/android-navigation-example
+https://github.com/googlecodelabs/android-workmanager
+https://github.com/android/architecture-samples
+```
+
+Need migration (Android.Support):
+
+```
 https://github.com/MianSarimHameed/JetpackNavigationSample
+```
+
+Extra dependecies (new bindings might be needed):
+
+```
+https://github.com/Gwokhov/Deadline
+https://github.com/MixSpot/WAX-Trade-Client
+
 https://github.com/qingmei2/MVVM-Rhine
 https://github.com/AgustaRC/MVVMArchitecture
 https://github.com/Nizomjon1994/Architecture-Component-MVP-Kotlin
@@ -46,7 +61,7 @@ https://github.com/kaesaecracker/CampusDualAndroid
 https://github.com/djain2405/RecyclerViewUsingAndroidJetpack
 https://github.com/fabio91oliveira/AndroidJetPackSample
 
-https://github.com/googlecodelabs/android-workmanager
+
 https://github.com/googlesamples/android-architecture/archive/todo-mvp.zip
 https://github.com/googlesamples/android-architecture/archive/todo-mvp-clean.zip
 https://github.com/googlesamples/android-architecture/archive/todo-mvp-dagger.zip
@@ -87,9 +102,6 @@ https://github.com/googlesamples/android-architecture/archive/dev-todo-mvvm-rxja
 ### Amazon Fire TV
 
 *   https://developer.amazon.com/docs/fire-tv/getting-started-developing-apps-and-games.html
-
-
-## AndroidX
 
 ## Google.Play.Services 
 
