@@ -24,6 +24,12 @@ https://github.com/googlesamples/android-sunflower
 https://github.com/prasannajeet/android-navigation-example
 https://github.com/googlecodelabs/android-workmanager
 https://github.com/android/architecture-samples
+https://github.com/antonshilov/compass
+https://github.com/husaynhakeem/android-camerax-sample
+https://github.com/AnkitDroidGit/CameraXSampleApp
+https://github.com/husaynhakeem/Androidx-SavedState-Playground
+https://github.com/AnkitDroidGit/ViewPage2Sample
+https://github.com/Kurun-pan/androidx-webkit-sample
 ```
 
 Need migration (Android.Support):
@@ -35,8 +41,24 @@ https://github.com/MianSarimHameed/JetpackNavigationSample
 Extra dependecies (new bindings might be needed):
 
 ```
+https://github.com/lalitkhandal/Fact
+https://github.com/theozgurr/SearchNewsAndroidApplication
+https://github.com/Amrutha-shet/AndroidTest
+https://github.com/zawadz88/NavigationComponentPlayground
+https://github.com/tomkoptel/nennos-pizza
+https://github.com/mikkipastel/BNK48member
+https://github.com/mariopce/androidx-sample
+
+```
+
+More complex extra dependencies:
+
+```
 https://github.com/Gwokhov/Deadline
+https://github.com/Naibeck/Android-Security
+
 https://github.com/MixSpot/WAX-Trade-Client
+https://github.com/Atwa/PopularMovies-MVVM-Sample
 
 https://github.com/qingmei2/MVVM-Rhine
 https://github.com/AgustaRC/MVVMArchitecture
