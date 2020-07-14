@@ -4,7 +4,7 @@ Dictionary<string, Dictionary<string, string> > Repositories_AndroidX = null;
 
 Repositories_AndroidX = new Dictionary<string, Dictionary<string, string> >()
     {
-        {
+        {        
             "AndroidX-JetPack-java",
             new Dictionary<string, string>()
             {
