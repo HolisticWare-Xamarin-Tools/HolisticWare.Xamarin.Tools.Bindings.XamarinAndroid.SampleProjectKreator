@@ -1,14 +1,3 @@
-string[] folder_patterns = new string[]
-{
-    "./externals/",
-    "./source/**/bin/",
-    "./source/**/obj/",
-};
-
-string[] file_patterns = new string[]
-{
-    "./**/*.binlog",
-};
 
 //---------------------------------------------------------------------------------------
 Task ("clean")
@@ -26,7 +15,7 @@ Task ("clean-folders")
     (
         () =>
         {
-            foreach(string folder in folder_patterns)
+            foreach(string folder in clean_folder_patterns)
             {
                 DirectoryPathCollection directories = GetDirectories(folder);
                 foreach(DirectoryPath dp in directories)
@@ -35,17 +24,17 @@ Task ("clean-folders")
 
                     if (DirectoryExists (dp))
                     {
-                        DeleteDirectory 
+                        DeleteDirectory
                                     (
-                                        dp, 
-                                        new DeleteDirectorySettings 
+                                        dp,
+                                        new DeleteDirectorySettings
                                         {
                                             Recursive = true,
                                             Force = true
                                         }
                                     );
                     }
-                }                
+                }
             }
 
 
@@ -58,7 +47,7 @@ Task ("clean-files")
     (
         () =>
         {
-            foreach(string file in file_patterns)
+            foreach(string file in clean_file_patterns)
             {
                 FilePathCollection files = GetFiles(file);
                 foreach(FilePath fp in files)
@@ -69,7 +58,7 @@ Task ("clean-files")
                     {
                         DeleteFile (fp);
                     }
-                }                
+                }
             }
 
 
