@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{F38CDB7C-8BC0-44D7-8A68-B59130B15CCC}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Bindings.Sample.Project.Kreator.App.Console.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ProjectData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProjectData.Concat.AndroidSupport.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProjectData.Concat.AndroidX.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProjectData.Concat.GooglePlayServicesAdMob.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProjectData.Concat.Material.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProjectData.Concat.Office365Fabric.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProjectData.Concat.Sceneform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProjectKreator.cs" />
+  </ItemGroup>
+</Project>

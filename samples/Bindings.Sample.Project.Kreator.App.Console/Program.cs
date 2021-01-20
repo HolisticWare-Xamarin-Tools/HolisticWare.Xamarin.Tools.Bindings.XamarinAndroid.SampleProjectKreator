@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-using HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core;
+
+using HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI;
 
 namespace Bindings.Sample.Project.Kreator.App
 {
@@ -9,10 +10,11 @@ namespace Bindings.Sample.Project.Kreator.App
         static bool show_help = false;
         static int verbosity = 0;
 
+        static string path_root = "/Users/Shared/Projects/d/hw-tools/SampleProjectKreator/";
         static string path =
-            // "/Projects/hw-tools/Kreator/source/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core.csproj"
-            // "/Projects/hw-tools/Kreator/samples/Bindings.Sample.Project.Kreator.App.Console/Bindings.Sample.Project.Kreator.App.Console.csproj"
-            "/Projects/hw-tools/SampleProjectKreator/samples/App.XamarinAndroid/App.XamarinAndroid.csproj"
+            // $"{path_root}/source/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core.csproj"
+            // $"{path_root}/samples/Bindings.Sample.Project.Kreator.App.Console/Bindings.Sample.Project.Kreator.App.Console.csproj"
+            $"{path_root}/App.XamarinAndroid/App.XamarinAndroid.csproj"
             ;
 
         static ProjectKreator project_kreator = null;
@@ -28,9 +30,9 @@ namespace Bindings.Sample.Project.Kreator.App
             }
             catch (Mono.Options.OptionException e)
             {
-                Console.Write("XamarinAndroid.ProjectKreator: ");
-                Console.WriteLine(e.Message);
-                Console.WriteLine("Try `XamarinAndroid.ProjectKreator --help' for more information.");
+                System.Console.Write("XamarinAndroid.ProjectKreator: ");
+                System.Console.WriteLine(e.Message);
+                System.Console.WriteLine("Try `XamarinAndroid.ProjectKreator --help' for more information.");
                 return;
             }
 

@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using global::HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core;
+using global::HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI;
 
 namespace Bindings.Sample.Project.Kreator.App.Console.Mono
 {
@@ -8,10 +8,11 @@ namespace Bindings.Sample.Project.Kreator.App.Console.Mono
     {
         static bool show_help = false;
 
+        static string path_root = "/Users/Shared/Projects/d/hw-tools/SampleProjectKreator/";
         static string path =
-            // "/Projects/hw-tools/Kreator/source/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core.csproj"
-            // "/Projects/hw-tools/Kreator/samples/Bindings.Sample.Project.Kreator.App.Console/Bindings.Sample.Project.Kreator.App.Console.csproj"
-            "/Projects/hw-tools/SampleProjectKreator/samples/App.XamarinAndroid/App.XamarinAndroid.csproj"
+            // $"{path_root}/source/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core.csproj"
+            // $"{path_root}/samples/Bindings.Sample.Project.Kreator.App.Console/Bindings.Sample.Project.Kreator.App.Console.csproj"
+            $"{path_root}/App.XamarinAndroid/App.XamarinAndroid.csproj"
             ;
 
         static List<ProjectKreator> ProjectKreators;

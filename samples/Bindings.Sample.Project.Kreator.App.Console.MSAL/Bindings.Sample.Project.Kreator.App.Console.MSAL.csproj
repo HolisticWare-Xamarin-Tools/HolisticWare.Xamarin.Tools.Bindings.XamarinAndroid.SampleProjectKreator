@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Mono.Options.Core" Version="1.0.0" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\source\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI.csproj" />
   </ItemGroup>
-  <Import Project="..\Bindings.Sample.Project.Kreator.App.Console.Shared\Bindings.Sample.Project.Kreator.App.Console.Shared.projitems" Label="Shared" Condition="Exists('..\Bindings.Sample.Project.Kreator.App.Console.Shared\Bindings.Sample.Project.Kreator.App.Console.Shared.projitems')" />
 </Project>

@@ -5,13 +5,19 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "library-source", "library-source", "{F4ABE4B1-48AF-4A7B-B150-EE471159B2B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core", "..\source\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core.csproj", "{5E799AD4-069E-46F5-B59C-963591F0BC97}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindings.Sample.Project.Kreator.App.Console.Mono", "Bindings.Sample.Project.Kreator.App.Console.Mono\Bindings.Sample.Project.Kreator.App.Console.Mono.csproj", "{812D5A6F-558C-445A-8E43-37C047A86979}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.App.XamarinAndroid", "Sample.App.XamarinAndroid\Sample.App.XamarinAndroid.csproj", "{806CE93F-8EBC-489B-BB0B-F734E063FA4B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindings.Sample.Project.Kreator.App.Console", "Bindings.Sample.Project.Kreator.App.Console\Bindings.Sample.Project.Kreator.App.Console.csproj", "{BA175DE1-2DE1-4F0A-B039-DD9D2C430EBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator", "..\source\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.csproj", "{9059C247-1637-4FE8-B265-07293ADDC1C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI", "..\source\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI.csproj", "{5EA61635-D3B3-42C0-B4C9-57B26655D917}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Bindings.Sample.Project.Kreator.App.Console.Shared", "Bindings.Sample.Project.Kreator.App.Console.Shared\Bindings.Sample.Project.Kreator.App.Console.Shared.shproj", "{F38CDB7C-8BC0-44D7-8A68-B59130B15CCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindings.Sample.Project.Kreator.App.Console.MSAL", "Bindings.Sample.Project.Kreator.App.Console.MSAL\Bindings.Sample.Project.Kreator.App.Console.MSAL.csproj", "{13E7EC71-7B18-4EBF-AB28-379F220228AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +25,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5E799AD4-069E-46F5-B59C-963591F0BC97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E799AD4-069E-46F5-B59C-963591F0BC97}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E799AD4-069E-46F5-B59C-963591F0BC97}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E799AD4-069E-46F5-B59C-963591F0BC97}.Release|Any CPU.Build.0 = Release|Any CPU
 		{812D5A6F-558C-445A-8E43-37C047A86979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{812D5A6F-558C-445A-8E43-37C047A86979}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{812D5A6F-558C-445A-8E43-37C047A86979}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,8 +37,21 @@ Global
 		{BA175DE1-2DE1-4F0A-B039-DD9D2C430EBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA175DE1-2DE1-4F0A-B039-DD9D2C430EBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA175DE1-2DE1-4F0A-B039-DD9D2C430EBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9059C247-1637-4FE8-B265-07293ADDC1C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9059C247-1637-4FE8-B265-07293ADDC1C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9059C247-1637-4FE8-B265-07293ADDC1C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9059C247-1637-4FE8-B265-07293ADDC1C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EA61635-D3B3-42C0-B4C9-57B26655D917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EA61635-D3B3-42C0-B4C9-57B26655D917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EA61635-D3B3-42C0-B4C9-57B26655D917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EA61635-D3B3-42C0-B4C9-57B26655D917}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13E7EC71-7B18-4EBF-AB28-379F220228AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13E7EC71-7B18-4EBF-AB28-379F220228AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13E7EC71-7B18-4EBF-AB28-379F220228AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13E7EC71-7B18-4EBF-AB28-379F220228AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5E799AD4-069E-46F5-B59C-963591F0BC97} = {F4ABE4B1-48AF-4A7B-B150-EE471159B2B1}
+		{9059C247-1637-4FE8-B265-07293ADDC1C2} = {F4ABE4B1-48AF-4A7B-B150-EE471159B2B1}
+		{5EA61635-D3B3-42C0-B4C9-57B26655D917} = {F4ABE4B1-48AF-4A7B-B150-EE471159B2B1}
 	EndGlobalSection
 EndGlobal
