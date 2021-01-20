@@ -1,25 +1,25 @@
-// mc++ // Copyright (c) Microsoft Corporation.
-// mc++ // All rights reserved.
-// mc++ //
-// mc++ // This code is licensed under the MIT License.
-// mc++ //
-// mc++ // Permission is hereby granted, free of charge, to any person obtaining a copy
-// mc++ // of this software and associated documentation files(the "Software"), to deal
-// mc++ // in the Software without restriction, including without limitation the rights
-// mc++ // to use, copy, modify, merge, publish, distribute, sublicense, and / or sell
-// mc++ // copies of the Software, and to permit persons to whom the Software is
-// mc++ // furnished to do so, subject to the following conditions :
-// mc++ //
-// mc++ // The above copyright notice and this permission notice shall be included in
-// mc++ // all copies or substantial portions of the Software.
-// mc++ //
-// mc++ // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// mc++ // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// mc++ // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// mc++ // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// mc++ // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// mc++ // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// mc++ // THE SOFTWARE.
+// Copyright (c) Microsoft Corporation.
+// All rights reserved.
+//
+// This code is licensed under the MIT License.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files(the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and / or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions :
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 // mc++ 
 // mc++ package com.azuresamples.msalandroidapp;
 // mc++ 
@@ -42,127 +42,129 @@
 // mc++ 
 // mc++ import com.google.android.material.navigation.NavigationView;
 // mc++ 
-// mc++ public class MainActivity extends AppCompatActivity
-// mc++         implements NavigationView.OnNavigationItemSelectedListener,
-// mc++         OnFragmentInteractionListener{
-// mc++ 
-// mc++     enum AppFragment {
-// mc++         SingleAccount,
-// mc++         MultipleAccount,
-// mc++         B2C
-// mc++     }
-// mc++ 
-// mc++     private AppFragment mCurrentFragment;
-// mc++ 
-// mc++     private ConstraintLayout mContentMain;
-// mc++ 
-// mc++     @Override
-// mc++     protected void onCreate(Bundle savedInstanceState) {
-// mc++         super.onCreate(savedInstanceState);
-// mc++         setContentView(R.layout.activity_main);
-// mc++ 
-// mc++         mContentMain = findViewById(R.id.content_main);
-// mc++ 
-// mc++         Toolbar toolbar = findViewById(R.id.toolbar);
-// mc++         setSupportActionBar(toolbar);
-// mc++         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-// mc++         NavigationView navigationView = findViewById(R.id.nav_view);
-// mc++         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-// mc++                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-// mc++         drawer.addDrawerListener(toggle);
-// mc++         toggle.syncState();
-// mc++         navigationView.setNavigationItemSelectedListener(this);
-// mc++ 
-// mc++         //Set default fragment
-// mc++         navigationView.setCheckedItem(R.id.nav_single_account);
-// mc++         setCurrentFragment(AppFragment.SingleAccount);
-// mc++     }
-// mc++ 
-// mc++     @Override
-// mc++     public boolean onNavigationItemSelected(final MenuItem item) {
-// mc++         final DrawerLayout drawer = findViewById(R.id.drawer_layout);
-// mc++         drawer.addDrawerListener(new DrawerLayout.DrawerListener() {
-// mc++             @Override
-// mc++             public void onDrawerSlide(@NonNull View drawerView, float slideOffset) { }
-// mc++ 
-// mc++             @Override
-// mc++             public void onDrawerOpened(@NonNull View drawerView) { }
-// mc++ 
-// mc++             @Override
-// mc++             public void onDrawerClosed(@NonNull View drawerView) {
-// mc++                 // Handle navigation view item clicks here.
-// mc++                 int id = item.getItemId();
-// mc++ 
-// mc++                 if (id == R.id.nav_single_account) {
-// mc++                     setCurrentFragment(AppFragment.SingleAccount);
-// mc++                 }
-// mc++ 
-// mc++                 if (id == R.id.nav_multiple_account) {
-// mc++                     setCurrentFragment(AppFragment.MultipleAccount);
-// mc++                 }
-// mc++ 
-// mc++                 if (id == R.id.nav_b2c) {
-// mc++                     setCurrentFragment(AppFragment.B2C);
-// mc++                 }
-// mc++ 
-// mc++                 drawer.removeDrawerListener(this);
-// mc++             }
-// mc++ 
-// mc++             @Override
-// mc++             public void onDrawerStateChanged(int newState) { }
-// mc++         });
-// mc++ 
-// mc++         drawer.closeDrawer(GravityCompat.START);
-// mc++         return true;
-// mc++     }
-// mc++ 
-// mc++     private void setCurrentFragment(final AppFragment newFragment){
-// mc++         if (newFragment == mCurrentFragment) {
-// mc++             return;
-// mc++         }
-// mc++ 
-// mc++         mCurrentFragment = newFragment;
-// mc++         setHeaderString(mCurrentFragment);
-// mc++         displayFragment(mCurrentFragment);
-// mc++     }
-// mc++ 
-// mc++     private void setHeaderString(final AppFragment fragment){
-// mc++         switch (fragment) {
-// mc++             case SingleAccount:
-// mc++                 getSupportActionBar().setTitle("Single Account Mode");
-// mc++                 return;
-// mc++ 
-// mc++             case MultipleAccount:
-// mc++                 getSupportActionBar().setTitle("Multiple Account Mode");
-// mc++                 return;
-// mc++ 
-// mc++             case B2C:
-// mc++                 getSupportActionBar().setTitle("B2C Mode");
-// mc++                 return;
-// mc++         }
-// mc++     }
-// mc++ 
-// mc++     private void displayFragment(final AppFragment fragment){
-// mc++         switch (fragment) {
-// mc++             case SingleAccount:
-// mc++                 attachFragment(new SingleAccountModeFragment());
-// mc++                 return;
-// mc++ 
-// mc++             case MultipleAccount:
-// mc++                 attachFragment(new MultipleAccountModeFragment());
-// mc++                 return;
-// mc++ 
-// mc++             case B2C:
-// mc++                 attachFragment(new B2CModeFragment());
-// mc++                 return;
-// mc++         }
-// mc++     }
-// mc++ 
-// mc++     private void attachFragment(final Fragment fragment) {
-// mc++         getSupportFragmentManager()
-// mc++                 .beginTransaction()
-// mc++                 .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-// mc++                 .replace(mContentMain.getId(),fragment)
-// mc++                 .commit();
-// mc++     }
-// mc++ }
+using Android.Support.V7.App;
+
+//public class MainActivity : AppCompatActivity
+//         NavigationView.OnNavigationItemSelectedListener,
+//         OnFragmentInteractionListener{
+ 
+//     enum AppFragment {
+//         SingleAccount,
+//         MultipleAccount,
+//         B2C
+//     }
+ 
+//     private AppFragment mCurrentFragment;
+ 
+//     private ConstraintLayout mContentMain;
+ 
+//     // @Override
+//     protected override void OnCreate(Bundle savedInstanceState) {
+//         super.onCreate(savedInstanceState);
+//         setContentView(R.layout.activity_main);
+ 
+//         mContentMain = findViewById(R.id.content_main);
+ 
+//         Toolbar toolbar = findViewById(R.id.toolbar);
+//         setSupportActionBar(toolbar);
+//         DrawerLayout drawer = findViewById(R.id.drawer_layout);
+//         NavigationView navigationView = findViewById(R.id.nav_view);
+//         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//         drawer.addDrawerListener(toggle);
+//         toggle.syncState();
+//         navigationView.setNavigationItemSelectedListener(this);
+ 
+//         //Set default fragment
+//         navigationView.setCheckedItem(R.id.nav_single_account);
+//         setCurrentFragment(AppFragment.SingleAccount);
+//     }
+ 
+//     // @Override
+//     public override boolean onNavigationItemSelected(/* final */ MenuItem item) {
+//         /* final */ DrawerLayout drawer = findViewById(R.id.drawer_layout);
+//         drawer.addDrawerListener(new DrawerLayout.DrawerListener() {
+//             // @Override
+//             public void onDrawerSlide(@NonNull View drawerView, float slideOffset) { }
+ 
+//             // @Override
+//             public void onDrawerOpened(@NonNull View drawerView) { }
+ 
+//             // @Override
+//             public void onDrawerClosed(@NonNull View drawerView) {
+//                 // Handle navigation view item clicks here.
+//                 int id = item.getItemId();
+ 
+//                 if (id == R.id.nav_single_account) {
+//                     SetCurrentFragment(AppFragment.SingleAccount);
+//                 }
+ 
+//                 if (id == R.id.nav_multiple_account) {
+//                     SetCurrentFragment(AppFragment.MultipleAccount);
+//                 }
+ 
+//                 if (id == R.id.nav_b2c) {
+//                     SetCurrentFragment(AppFragment.B2C);
+//                 }
+ 
+//                 drawer.RemoveDrawerListener(this);
+//             }
+ 
+//             // @Override
+//             public void OnDrawerStateChanged(int newState) { }
+//         });
+ 
+//         drawer.CloseDrawer(GravityCompat.START);
+//         return true;
+//     }
+ 
+//     private override void SetCurrentFragment(/* final */ AppFragment newFragment){
+//         if (newFragment == mCurrentFragment) {
+//             return;
+//         }
+ 
+//         mCurrentFragment = newFragment;
+//         SetHeaderString(mCurrentFragment);
+//         DisplayFragment(mCurrentFragment);
+//     }
+ 
+//     private void SetHeaderString(/* final */ AppFragment fragment){
+//         switch (fragment) {
+//             case SingleAccount:
+//                 GetSupportActionBar().SetTitle("Single Account Mode");
+//                 return;
+ 
+//             case MultipleAccount:
+//                 getSupportActionBar().SetTitle("Multiple Account Mode");
+//                 return;
+ 
+//             case B2C:
+//                 getSupportActionBar().SetTitle("B2C Mode");
+//                 return;
+//         }
+//     }
+ 
+//     private void displayFragment(/* final */ AppFragment fragment){
+//         switch (fragment) {
+//             case SingleAccount:
+//                 AttachFragment(new SingleAccountModeFragment());
+//                 return;
+ 
+//             case MultipleAccount:
+//                 AttachFragment(new MultipleAccountModeFragment());
+//                 return;
+ 
+//             case B2C:
+//                 AttachFragment(new B2CModeFragment());
+//                 return;
+//         }
+//     }
+ 
+//     private void AttachFragment(/* final */ Fragment fragment) {
+//         GetSupportFragmentManager()
+//                 .BeginTransaction()
+//                 .SetTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+//                 .Replace(mContentMain.getId(),fragment)
+//                 .Commit();
+//     }
+// }
