@@ -3,20 +3,20 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>Latest</LangVersion>
-        <RootNamespace>HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator</RootNamespace>
+        <RootNamespace>HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI</RootNamespace>
         <!--
         If moved to separate PropertyGroup - UI is cleared?!?!
         -->
         <PackOnBuild>true</PackOnBuild>
-        <PackageId>HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator</PackageId>
+        <PackageId>HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI</PackageId>
         <Title>
-            HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator
+            HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI
         </Title>
         <summary>
-            SampleProjectKreator Tools for GitHub client API for bindings productivity.
+            SampleProjectKreator CLI Tools for GitHub client API for bindings productivity.
         </summary>
         <Description>
-            SampleProjectKreator Tools for GitHub client API for bindings productivity.
+            SampleProjectKreator CLI Tools for GitHub client API for bindings productivity.
         </Description>
         <Owners>HolisticWare, moljac</Owners>
         <Authors>HolisticWare, moljac</Authors>
@@ -57,37 +57,17 @@
         -->
         <PackageOutputPath>../../output</PackageOutputPath>
     </PropertyGroup>
-
-    <PropertyGroup>
-        <EnableDefaultItems>false</EnableDefaultItems>
-    </PropertyGroup>
   
     <ItemGroup>
-      <PackageReference Include="Microsoft.Build.Framework" Version="15.9.20" />
-      <PackageReference Include="Microsoft.Build.Engine" Version="15.9.20" />
-      <PackageReference Include="Microsoft.Build" Version="15.9.20" />
+      <PackageReference Include="Microsoft.Build.Framework" Version="16.8.0" />
+      <PackageReference Include="Microsoft.Build.Engine" Version="16.8.0" />
+      <PackageReference Include="Microsoft.Build" Version="16.8.0" />
       <PackageReference Include="Mono.Options.Core" Version="1.0.0" />
+      <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.3" />
+      <PackageReference Include="AsyncFixer" Version="1.4.1" />
     </ItemGroup>
+
     <ItemGroup>
-      <Folder Include="Files\" />
-      <Folder Include="Files\Sample.App.XamarinAndroid\" />
-      <Folder Include="Files\Sample.App.XamarinAndroid\Resources\" />
-      <Folder Include="Files\Sample.App.XamarinAndroid\Assets\" />
-      <Folder Include="Files\Sample.App.XamarinAndroid\Properties\" />
-      <Folder Include="Files\Porting\" />
-    </ItemGroup>
-    <ItemGroup>
-      <Content Include="Files\Sample.App.XamarinAndroid\**" CopyToOutputDirectory="PreserveNewest">
-      </Content>
-    </ItemGroup>
-    <ItemGroup>
-      <Compile Include="ProjectKreator.CommandLineOptions.cs" />
-      <Compile Include="ProjectKreator.cs" />
-      <Compile Include="ProjectKreator.FolderStructure.cs" />
-      <Compile Include="Files\Porting\Transpiler.cs" />
-      <Compile Include="Files\Porting\CommentingNoOpTranspiler.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <None Include="Files\Porting\porting-mapping.csv" />
+      <ProjectReference Include="..\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.csproj" />
     </ItemGroup>
 </Project>

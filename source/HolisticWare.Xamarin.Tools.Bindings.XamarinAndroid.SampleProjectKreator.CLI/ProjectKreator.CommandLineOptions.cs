@@ -4,7 +4,7 @@ using Microsoft.Build.BuildEngine;
 using Microsoft.Build.Evaluation;
 using Microsoft.Build.Execution;
 
-namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core
+namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI
 {
 
     public partial class ProjectKreator
@@ -33,16 +33,6 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
 
             options = new Mono.Options.OptionSet()
             {
-                // ../../../../../../../X/AndroidSupportComponents-AndroidX-binderate/output/AndroidSupport.api-diff.xml
-                {
-                    "n|name",
-                    "Name of the project",
-                    (string v) =>
-                    {
-                        folder_input_android = v;
-                        return;
-                    }
-                },
                 {
                     "i|input=",
                     "input folder with Android App gradle project",
@@ -62,13 +52,22 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
                     }
                 },
                 {
+                    "n|name",
+                    "Name of the project",
+                    (string v) =>
+                    {
+                        folder_input_android = v;
+                        return;
+                    }
+                },
+                {
                     "h|help",
                     "show this message and exit",
                     v => show_help = v != null
                 },
             };
 
-            return OptionSet = options;
+            return options;
         }
 
         public void Debug(string format, params object[] args)

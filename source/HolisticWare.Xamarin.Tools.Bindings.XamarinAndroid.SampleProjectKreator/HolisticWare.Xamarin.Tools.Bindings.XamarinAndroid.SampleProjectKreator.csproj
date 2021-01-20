@@ -1,0 +1,88 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>Latest</LangVersion>
+        <EnableDefaultItems>false</EnableDefaultItems>
+        <RootNamespace>HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator</RootNamespace>
+        <!--
+        If moved to separate PropertyGroup - UI is cleared?!?!
+        -->
+        <PackOnBuild>true</PackOnBuild>
+        <PackageId>HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator</PackageId>
+        <Title>
+            HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator
+        </Title>
+        <summary>
+            SampleProjectKreator Tools for GitHub client API for bindings productivity.
+        </summary>
+        <Description>
+            SampleProjectKreator Tools for GitHub client API for bindings productivity.
+        </Description>
+        <Owners>HolisticWare, moljac</Owners>
+        <Authors>HolisticWare, moljac</Authors>
+        <Copyright>2020</Copyright>
+        <ProjectUrl>
+            https://github.com/HolisticWare-Xamarin-Tools/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator
+        </ProjectUrl>
+        <PackageProjectUrl>
+            https://github.com/HolisticWare-Xamarin-Tools/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator
+        </PackageProjectUrl>
+        <RepositoryUrl>
+            https://github.com/HolisticWare-Xamarin-Tools/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator
+        </RepositoryUrl>
+        <license>LICENSE</license>
+        <licenseUrl>
+            https://github.com/HolisticWare-Xamarin-Tools/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator/blob/master/LICENSE
+        </licenseUrl>
+        <PackageLicenseUrl>
+            https://github.com/HolisticWare-Xamarin-Tools/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator/blob/master/LICENSE
+        </PackageLicenseUrl>
+        <iconUrl>
+            https://secure.gravatar.com/avatar/b662959e712466f393541935b664d3c5
+        </iconUrl>
+        <PackageIconUrl>
+            https://secure.gravatar.com/avatar/b662959e712466f393541935b664d3c5        
+        </PackageIconUrl>
+        <VersionPrefix>0.0.1</VersionPrefix>
+        <!--
+        VersionSuffix - For debugging and local GitHub feed
+        -->
+        <VersionSuffix>alpha-$([System.DateTime]::Now.ToString('yyyyMMddHHmm'))</VersionSuffix>
+        <PackageVersion>$(Version)</PackageVersion>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <!--
+        put the package output into a GitHub test folder
+        -->
+        <PackageOutputPath>../../output</PackageOutputPath>
+    </PropertyGroup>
+  
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Build.Framework" Version="16.8.0" />
+      <PackageReference Include="Microsoft.Build.Engine" Version="16.8.0" />
+      <PackageReference Include="Microsoft.Build" Version="16.8.0" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Files\" />
+      <Folder Include="Files\Sample.App.XamarinAndroid\" />
+      <Folder Include="Files\Sample.App.XamarinAndroid\Resources\" />
+      <Folder Include="Files\Sample.App.XamarinAndroid\Assets\" />
+      <Folder Include="Files\Sample.App.XamarinAndroid\Properties\" />
+      <Folder Include="Files\Porting\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Files\Sample.App.XamarinAndroid\**" CopyToOutputDirectory="PreserveNewest">
+      </Content>
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Include="ProjectKreator.cs" />
+      <Compile Include="ProjectKreator.FolderStructure.cs" />
+      <Compile Include="Files\Porting\Transpiler.cs" />
+      <Compile Include="Files\Porting\CommentingNoOpTranspiler.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="Files\Porting\porting-mapping.csv" />
+    </ItemGroup>
+</Project>

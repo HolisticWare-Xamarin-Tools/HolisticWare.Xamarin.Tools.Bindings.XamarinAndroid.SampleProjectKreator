@@ -1,25 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
+
 using Microsoft.Build.BuildEngine;
 using Microsoft.Build.Evaluation;
-using Microsoft.Build.Execution;
 
-namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core
+namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator
 {
     public partial class ProjectKreator
     {
         public ProjectKreator()
         {
-            OptionSet = this.Options();
-
             return;
-        }
-
-        public Mono.Options.OptionSet OptionSet
-        {
-            get;
-            set;
         }
 
         public string InputFolderPath
@@ -29,19 +19,6 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
         }
 
         public string OutputFolderPath
-        {
-            get;
-            set;
-        }
-
-
-        public string GroupName
-        {
-            get;
-            set;
-        }
-
-        public string FeatureName
         {
             get;
             set;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core
+namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator
 {
     public partial class ProjectKreator
     {
@@ -641,7 +641,7 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
             string content_resources_designer = File.ReadAllText(path_content_resources_designer);
 
             string path_folder_project_properties03 = ProjectStructureFolders["Project Folder/Resources"];
-             string path_output_resources_designer = Path.Combine
+            string path_output_resources_designer = Path.Combine
                                                         (
                                                             new string[]
                                                             {

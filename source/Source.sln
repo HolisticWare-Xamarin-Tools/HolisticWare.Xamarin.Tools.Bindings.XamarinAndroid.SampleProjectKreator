@@ -1,9 +1,10 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30524.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core", "HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.Core.csproj", "{8E7014D5-8228-4D8E-9FBF-36EA4C9F170C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator", "HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.csproj", "{F086411F-69DF-4919-AED4-71E6699C7B86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI", "HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI.csproj", "{1AFB96A8-EA3C-49C4-960E-252667657FF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,9 +12,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8E7014D5-8228-4D8E-9FBF-36EA4C9F170C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E7014D5-8228-4D8E-9FBF-36EA4C9F170C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E7014D5-8228-4D8E-9FBF-36EA4C9F170C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E7014D5-8228-4D8E-9FBF-36EA4C9F170C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F086411F-69DF-4919-AED4-71E6699C7B86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F086411F-69DF-4919-AED4-71E6699C7B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F086411F-69DF-4919-AED4-71E6699C7B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F086411F-69DF-4919-AED4-71E6699C7B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AFB96A8-EA3C-49C4-960E-252667657FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AFB96A8-EA3C-49C4-960E-252667657FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AFB96A8-EA3C-49C4-960E-252667657FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AFB96A8-EA3C-49C4-960E-252667657FF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
