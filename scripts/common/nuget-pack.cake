@@ -14,7 +14,7 @@ Task("nuget-pack")
 												.WithProperty
 													(
 														"PackageOutputPath", 
-														MakeAbsolute((DirectoryPath)"../../output/").FullPath
+														MakeAbsolute((DirectoryPath)"./output/").FullPath
 													)
 												//.WithProperty("PackageVersion", NUGET_VERSION)
 												;
