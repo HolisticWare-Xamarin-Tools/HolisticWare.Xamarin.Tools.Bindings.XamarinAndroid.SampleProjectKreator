@@ -1,5 +1,12 @@
 # HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator
 
+## DONE
+
+* https://github.com/moljac/microsoft-authentication-library-for-dotnet/tree/trwalke/AndroidBinding_AX_AS_XF/samples
+
+
+## TODO
+
 *   https://android-developers.googleblog.com/2018/05/hello-world-androidx.html
 
 *   https://github.com/SyamSundarKirubakaran/android-jetpack#room
