@@ -35,7 +35,6 @@ namespace HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreato
             }
             else if (runtime_framework.Contains(".NET Core"))
             {
-
             }
 
             ProjectStructureFolders.Add

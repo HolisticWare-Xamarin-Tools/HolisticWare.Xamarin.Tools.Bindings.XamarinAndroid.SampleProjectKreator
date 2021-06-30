@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
+    <RootNamespace>HolisticWare.Xamarin.Tools.NuGet.Tool</RootNamespace>
+    <ToolCommandName>nuggeteer</ToolCommandName>
+    <PackAsTool>true</PackAsTool>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageOutputPath>../../../output</PackageOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.CommandLine" Version="2.0.0-beta1.21216.1" />
+    <PackageReference Include="Spectre.Console" Version="0.40.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\source\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.csproj" />
+    <ProjectReference Include="..\..\..\source\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI.csproj" />
+  </ItemGroup>
+</Project>
