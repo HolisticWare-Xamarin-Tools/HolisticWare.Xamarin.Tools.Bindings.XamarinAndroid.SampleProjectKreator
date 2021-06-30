@@ -1,0 +1,36 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30524.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{6140CF53-A60E-4E3E-A466-EC78AAA99CD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Xamarin.Tools.AndroidSampleProjectKreator.dotnet-tool", "HolisticWare.Xamarin.Tools.AndroidSampleProjectKreator.dotnet-tool\HolisticWare.Xamarin.Tools.AndroidSampleProjectKreator.dotnet-tool.csproj", "{8469B456-0E87-43D3-A86B-31D9B633E1D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator", "..\..\source\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.csproj", "{4AAB542F-E76E-4D36-B1B4-DDE3146F5A77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI", "..\..\source\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.SampleProjectKreator.CLI.csproj", "{5B47EBF9-F042-4CD7-A52D-46E4B2EBACA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8469B456-0E87-43D3-A86B-31D9B633E1D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8469B456-0E87-43D3-A86B-31D9B633E1D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8469B456-0E87-43D3-A86B-31D9B633E1D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8469B456-0E87-43D3-A86B-31D9B633E1D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AAB542F-E76E-4D36-B1B4-DDE3146F5A77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AAB542F-E76E-4D36-B1B4-DDE3146F5A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AAB542F-E76E-4D36-B1B4-DDE3146F5A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AAB542F-E76E-4D36-B1B4-DDE3146F5A77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B47EBF9-F042-4CD7-A52D-46E4B2EBACA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B47EBF9-F042-4CD7-A52D-46E4B2EBACA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B47EBF9-F042-4CD7-A52D-46E4B2EBACA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B47EBF9-F042-4CD7-A52D-46E4B2EBACA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4AAB542F-E76E-4D36-B1B4-DDE3146F5A77} = {6140CF53-A60E-4E3E-A466-EC78AAA99CD4}
+		{5B47EBF9-F042-4CD7-A52D-46E4B2EBACA3} = {6140CF53-A60E-4E3E-A466-EC78AAA99CD4}
+	EndGlobalSection
+EndGlobal
